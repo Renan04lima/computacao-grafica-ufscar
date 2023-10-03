@@ -1,40 +1,45 @@
-#include <iostream>
-#include <vector>
+#include "ImageIO.h"
 #include "lodepng.h"
+#include <iostream>
 
-int main() {
-    // Dimensões da imagem
-    int image_width = 256;
-    int image_height = 256;
+// Constructor definition
+ImageIO::ImageIO(int image_width, int image_height) {
+    this->image_width = image_width;
+    this->image_height = image_height;
+    // Create a vector to store the image pixels (RGBA)
+    this->image_data = std::vector<unsigned char>(image_width * image_height * 4);
+}
 
-    // Crie um vetor para armazenar os pixels da imagem (RGBA)
-    std::vector<unsigned char> image_data(image_width * image_height * 4);
+// Member function to save PNG
+void ImageIO::save_png(const char *filename) {
+    // Save the image in PNG format using lodepng
+    if (lodepng::encode(filename, this->image_data, this->image_width, this->image_height) == 0) {
+        std::cout << "PNG image created successfully: " << filename << std::endl;
+    } else {
+        std::cerr << "Error creating PNG image." << std::endl;
+    }
+}
 
-    // Preencha a imagem com o gradiente
-    for (int j = 0; j < image_height; ++j) {
-        for (int i = 0; i < image_width; ++i) {
-            unsigned char r = static_cast<unsigned char>(255.999 * double(i) / (image_width - 1));
-            unsigned char g = static_cast<unsigned char>(255.999 * double(j) / (image_height - 1));
+// Member function to create gradient
+void ImageIO::makeGradient() {
+    // Fill the image with the gradient
+    for (int j = 0; j < this->image_height; ++j) {
+        for (int i = 0; i < this->image_width; ++i) {
+            unsigned char r = static_cast<unsigned char>(255.999 * double(i) / (this->image_width - 1));
+            unsigned char g = static_cast<unsigned char>(255.999 * double(j) / (this->image_height - 1));
             unsigned char b = static_cast<unsigned char>(0);
-            unsigned char a = static_cast<unsigned char>(255); // Alpha (transparência) = 255 (opaco)
+            unsigned char a = static_cast<unsigned char>(255); // Alpha (transparency) = 255 (opaque)
 
-            // Calcule o índice do pixel na imagem RGBA
-            size_t index = (i + j * image_width) * 4;
+            // Calculate the pixel index in the RGBA image
+            size_t index = (i + j * this->image_width) * 4;
 
-            // Preencha os valores de cor no vetor de imagem
-            image_data[index] = r;
-            image_data[index + 1] = g;
-            image_data[index + 2] = b;
-            image_data[index + 3] = a;
+            // Fill the color values in the image data vector
+            this->image_data[index] = r;
+            this->image_data[index + 1] = g;
+            this->image_data[index + 2] = b;
+            this->image_data[index + 3] = a;
         }
     }
 
-    // Salve a imagem em formato PNG usando lodepng
-    if (lodepng::encode("gradient.png", image_data, image_width, image_height) == 0) {
-        std::cout << "Imagem PNG criada com sucesso: gradient.png" << std::endl;
-    } else {
-        std::cerr << "Erro ao criar a imagem PNG." << std::endl;
-    }
-
-    return 0;
+    save_png("gradient.png");
 }
