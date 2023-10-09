@@ -17,6 +17,6 @@ $ git clone https://github.com/lvandeve/lodepng.git
 
 - Rodar programa
 ```powershell
-$ g++ -o ImagesIO ImagesIO.cpp -I../lodepng ../lodepng/lodepng.cpp -Wall -Wextra -pedantic -ansi -O3
-$ ./ImagesIO
+$ g++ -o output main.cpp includes/ImageIO.cpp -I../lodepng ../lodepng/lodepng.cpp -Wall
+$ ./output
 ```

@@ -1,6 +1,6 @@
-#include "ImageIO.h"
 #include "lodepng.h"
 #include <iostream>
+#include "ImageIO.h"
 
 // Constructor definition
 ImageIO::ImageIO(int image_width, int image_height) {

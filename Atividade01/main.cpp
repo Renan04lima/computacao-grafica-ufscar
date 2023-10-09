@@ -1,5 +1,5 @@
-#include "ImageIO.h"
 #include <iostream>
+#include "includes/ImageIO.h"
 
 int main() {
     ImageIO imageIO(256, 256);
