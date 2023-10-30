@@ -1,0 +1,33 @@
+\doxysection{Image\+IO.\+h}
+\hypertarget{_image_i_o_8h_source}{}\label{_image_i_o_8h_source}\index{/Users/renanoliveira/Desktop/ufscar/Faculdade/Computacao Grafica/2023/Atividade01/includes/ImageIO.h@{/Users/renanoliveira/Desktop/ufscar/Faculdade/Computacao Grafica/2023/Atividade01/includes/ImageIO.h}}
+\mbox{\hyperlink{_image_i_o_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#ifndef\ IMAGEIO\_H}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#define\ IMAGEIO\_H}}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_image_i_o}{ImageIO}}\ \{}
+\DoxyCodeLine{00013\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00014\ \ \ \ \ \textcolor{keywordtype}{int}\ image\_width;}
+\DoxyCodeLine{00015\ \ \ \ \ \textcolor{keywordtype}{int}\ image\_height;}
+\DoxyCodeLine{00016\ \ \ \ \ std::vector<unsigned\ char>\ image\_data;}
+\DoxyCodeLine{00017\ }
+\DoxyCodeLine{00022\ \ \ \ \ \textcolor{keywordtype}{void}\ save\_png(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *filename);}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{keywordtype}{void}\ fill\_background(\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{char}\ r,\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{char}\ g,\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{char}\ b,\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{char}\ a);}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00039\ \ \ \ \ \mbox{\hyperlink{class_image_i_o}{ImageIO}}(\textcolor{keywordtype}{int}\ image\_width,\ \textcolor{keywordtype}{int}\ image\_height);}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00044\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_image_i_o_a7e166ebc8a3dde4db25c01d528faef97}{makeGradient}}();}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00055\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_image_i_o_a7d8176caaa319ca7fd8d7d1688a65f0e}{makeCircle}}(\textcolor{keywordtype}{int}\ centerX,\ \textcolor{keywordtype}{int}\ centerY,\ \textcolor{keywordtype}{int}\ radius,\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{char}\ r,\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{char}\ g,\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{char}\ b);}
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00066\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_image_i_o_a9848693d600775dfa9cc53d46aacffcd}{makeSquare}}(\textcolor{keywordtype}{int}\ x,\ \textcolor{keywordtype}{int}\ y,\ \textcolor{keywordtype}{int}\ size,\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{char}\ r,\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{char}\ g,\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{char}\ b);}
+\DoxyCodeLine{00067\ \};}
+\DoxyCodeLine{00068\ }
+\DoxyCodeLine{00069\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

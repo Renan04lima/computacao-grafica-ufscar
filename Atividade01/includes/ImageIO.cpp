@@ -1,3 +1,11 @@
+/**
+ * @file ImageIO.cpp
+ * @author Renan Oliveira de Barros Lima
+ * @brief Implementação da classe ImageIO para gerar imagens em formato PNG com funcionalidades de gradiente, círculos e quadrados.
+ */
+
+
+
 #include "lodepng.h"
 #include <iostream>
 
@@ -21,6 +29,7 @@ void ImageIO::save_png(const char *filename) {
     }
 }
 
+// Member function to fill background
 void ImageIO::fill_background(unsigned char r, unsigned char g, unsigned char b, unsigned char a) {
     // Fill the image with the specified color
     for (int j = 0; j < this->image_height; ++j) {
@@ -29,7 +38,7 @@ void ImageIO::fill_background(unsigned char r, unsigned char g, unsigned char b,
             size_t index = (i + j * this->image_width) * 4;
 
             // Fill the background with the specified color
-            this->image_data[index] = r; // R component
+            this->image_data[index] = r;     // R component
             this->image_data[index + 1] = g; // G component
             this->image_data[index + 2] = b; // B component
             this->image_data[index + 3] = a; // Alpha (transparency)
@@ -61,6 +70,7 @@ void ImageIO::makeGradient() {
     save_png("gradient.png");
 }
 
+// Member function to create a filled circle
 void ImageIO::makeCircle(int centerX, int centerY, int radius, unsigned char r, unsigned char g, unsigned char b) {
     // Ensure that the radius is non-negative
     if (radius < 0) {
@@ -68,7 +78,7 @@ void ImageIO::makeCircle(int centerX, int centerY, int radius, unsigned char r, 
         return;
     }
 
-    // background black
+    // Fill the background with black
     fill_background(0, 0, 0, 255);
 
     for (int j = 0; j < this->image_height; ++j) {
@@ -82,9 +92,9 @@ void ImageIO::makeCircle(int centerX, int centerY, int radius, unsigned char r, 
                 size_t index = (i + j * this->image_width) * 4;
 
                 // Fill the circle with the specified color
-                this->image_data[index] = r; // R component
-                this->image_data[index + 1] = g; // G component
-                this->image_data[index + 2] = b; // B component
+                this->image_data[index] = r;       // R component
+                this->image_data[index + 1] = g;   // G component
+                this->image_data[index + 2] = b;   // B component
                 this->image_data[index + 3] = 255; // Fully opaque
             }
         }
@@ -94,6 +104,7 @@ void ImageIO::makeCircle(int centerX, int centerY, int radius, unsigned char r, 
     save_png("circle.png");
 }
 
+// Member function to create a filled square
 void ImageIO::makeSquare(int x, int y, int size, unsigned char r, unsigned char g, unsigned char b) {
     // Ensure that the size is non-negative
     if (size < 0) {
@@ -107,7 +118,7 @@ void ImageIO::makeSquare(int x, int y, int size, unsigned char r, unsigned char 
     int x2 = x + size;
     int y2 = y + size;
 
-    // background black
+    // Fill the background with black
     fill_background(0, 0, 0, 255);
 
     // Draw the colored square on the black background
@@ -119,9 +130,9 @@ void ImageIO::makeSquare(int x, int y, int size, unsigned char r, unsigned char 
                 size_t index = (i + j * this->image_width) * 4;
 
                 // Fill the square with the specified color
-                this->image_data[index] = r; // R component
-                this->image_data[index + 1] = g; // G component
-                this->image_data[index + 2] = b; // B component
+                this->image_data[index] = r;       // R component
+                this->image_data[index + 1] = g;   // G component
+                this->image_data[index + 2] = b;   // B component
                 this->image_data[index + 3] = 255; // Fully opaque
             }
         }
