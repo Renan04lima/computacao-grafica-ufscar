@@ -17,6 +17,7 @@ public:
     void makeGradient();
 
     void makeCircle(int centerX, int centerY, int radius, unsigned char r, unsigned char g, unsigned char b);
+    void makeSquare(int x, int y, int size, unsigned char r, unsigned char g, unsigned char b);
 };
 
 #endif

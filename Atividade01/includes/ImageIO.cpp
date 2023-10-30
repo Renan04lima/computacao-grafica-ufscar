@@ -88,3 +88,51 @@ void ImageIO::makeCircle(int centerX, int centerY, int radius, unsigned char r, 
     // Save the modified image
     save_png("circle.png");
 }
+
+void ImageIO::makeSquare(int x, int y, int size, unsigned char r, unsigned char g, unsigned char b) {
+    // Ensure that the size is non-negative
+    if (size < 0) {
+        std::cerr << "Invalid size for the square." << std::endl;
+        return;
+    }
+
+    // Calculate the coordinates of the square's top-left and bottom-right corners
+    int x1 = x;
+    int y1 = y;
+    int x2 = x + size;
+    int y2 = y + size;
+
+    // Fill the image with a black background
+    for (int j = 0; j < this->image_height; ++j) {
+        for (int i = 0; i < this->image_width; ++i) {
+            // Calculate the pixel index in the RGBA image
+            size_t index = (i + j * this->image_width) * 4;
+
+            // Fill the background with black
+            this->image_data[index] = 0;   // R component
+            this->image_data[index + 1] = 0; // G component
+            this->image_data[index + 2] = 0; // B component
+            this->image_data[index + 3] = 255; // Fully opaque
+        }
+    }
+
+    // Draw the colored square on the black background
+    for (int j = y1; j < y2; ++j) {
+        for (int i = x1; i < x2; ++i) {
+            // Check if the pixel (i, j) is inside the square
+            if (i >= 0 && i < this->image_width && j >= 0 && j < this->image_height) {
+                // Calculate the pixel index in the RGBA image
+                size_t index = (i + j * this->image_width) * 4;
+
+                // Fill the square with the specified color
+                this->image_data[index] = r; // R component
+                this->image_data[index + 1] = g; // G component
+                this->image_data[index + 2] = b; // B component
+                this->image_data[index + 3] = 255; // Fully opaque
+            }
+        }
+    }
+
+    // Save the modified image
+    save_png("square.png");
+}
