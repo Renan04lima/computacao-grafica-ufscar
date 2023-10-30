@@ -67,7 +67,7 @@ void ImageIO::makeGradient() {
         }
     }
 
-    save_png("gradient.png");
+    save_png("outputs/gradient.png");
 }
 
 // Member function to create a filled circle
@@ -101,7 +101,7 @@ void ImageIO::makeCircle(int centerX, int centerY, int radius, unsigned char r, 
     }
 
     // Save the modified image
-    save_png("circle.png");
+    save_png("outputs/circle.png");
 }
 
 // Member function to create a filled square
@@ -139,5 +139,5 @@ void ImageIO::makeSquare(int x, int y, int size, unsigned char r, unsigned char 
     }
 
     // Save the modified image
-    save_png("square.png");
+    save_png("outputs/square.png");
 }
