@@ -6,5 +6,8 @@ int main() {
 
     imageIO.makeGradient();
 
+    // create a circle with color red (255, 0, 0)
+    imageIO.makeCircle(128, 128, 100, 255, 0, 0);
+
     return 0;
 }
