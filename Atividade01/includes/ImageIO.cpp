@@ -21,6 +21,22 @@ void ImageIO::save_png(const char *filename) {
     }
 }
 
+void ImageIO::fill_background(unsigned char r, unsigned char g, unsigned char b, unsigned char a) {
+    // Fill the image with the specified color
+    for (int j = 0; j < this->image_height; ++j) {
+        for (int i = 0; i < this->image_width; ++i) {
+            // Calculate the pixel index in the RGBA image
+            size_t index = (i + j * this->image_width) * 4;
+
+            // Fill the background with the specified color
+            this->image_data[index] = r; // R component
+            this->image_data[index + 1] = g; // G component
+            this->image_data[index + 2] = b; // B component
+            this->image_data[index + 3] = a; // Alpha (transparency)
+        }
+    }
+}
+
 // Member function to create gradient
 void ImageIO::makeGradient() {
     // Fill the image with the gradient
@@ -52,19 +68,8 @@ void ImageIO::makeCircle(int centerX, int centerY, int radius, unsigned char r, 
         return;
     }
 
-     // Fill the image with a black background
-    for (int j = 0; j < this->image_height; ++j) {
-        for (int i = 0; i < this->image_width; ++i) {
-            // Calculate the pixel index in the RGBA image
-            size_t index = (i + j * this->image_width) * 4;
-
-            // Fill the background with black
-            this->image_data[index] = 0;   // R component
-            this->image_data[index + 1] = 0; // G component
-            this->image_data[index + 2] = 0; // B component
-            this->image_data[index + 3] = 255; // Fully opaque
-        }
-    }
+    // background black
+    fill_background(0, 0, 0, 255);
 
     for (int j = 0; j < this->image_height; ++j) {
         for (int i = 0; i < this->image_width; ++i) {
@@ -102,19 +107,8 @@ void ImageIO::makeSquare(int x, int y, int size, unsigned char r, unsigned char 
     int x2 = x + size;
     int y2 = y + size;
 
-    // Fill the image with a black background
-    for (int j = 0; j < this->image_height; ++j) {
-        for (int i = 0; i < this->image_width; ++i) {
-            // Calculate the pixel index in the RGBA image
-            size_t index = (i + j * this->image_width) * 4;
-
-            // Fill the background with black
-            this->image_data[index] = 0;   // R component
-            this->image_data[index + 1] = 0; // G component
-            this->image_data[index + 2] = 0; // B component
-            this->image_data[index + 3] = 255; // Fully opaque
-        }
-    }
+    // background black
+    fill_background(0, 0, 0, 255);
 
     // Draw the colored square on the black background
     for (int j = y1; j < y2; ++j) {

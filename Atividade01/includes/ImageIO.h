@@ -10,6 +10,7 @@ private:
     std::vector<unsigned char> image_data;
 
     void save_png(const char *filename);
+    void fill_background(unsigned char r, unsigned char g, unsigned char b, unsigned char a);
 
 public:
     ImageIO(int image_width, int image_height);
@@ -17,6 +18,7 @@ public:
     void makeGradient();
 
     void makeCircle(int centerX, int centerY, int radius, unsigned char r, unsigned char g, unsigned char b);
+
     void makeSquare(int x, int y, int size, unsigned char r, unsigned char g, unsigned char b);
 };
 
