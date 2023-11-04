@@ -1,0 +1,71 @@
+\doxysection{vec3.\+h}
+\hypertarget{vec3_8h_source}{}\label{vec3_8h_source}\index{/Users/renanoliveira/Desktop/ufscar/Faculdade/Computacao Grafica/2023/Atividade02/includes/vec3.h@{/Users/renanoliveira/Desktop/ufscar/Faculdade/Computacao Grafica/2023/Atividade02/includes/vec3.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ VEC3\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ VEC3\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <cmath>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00007\ \textcolor{keyword}{using\ }std::sqrt;}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00014\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classvec3}{vec3}}\ \{}
+\DoxyCodeLine{00015\ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00016\ \ \ \ \ \textcolor{keywordtype}{double}\ e[3];}
+\DoxyCodeLine{00017\ }
+\DoxyCodeLine{00021\ \ \ \ \ \mbox{\hyperlink{classvec3_aea9f3480a6ccd7ce3ab02d0992705d33}{vec3}}();}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00029\ \ \ \ \ \mbox{\hyperlink{classvec3_aea9f3480a6ccd7ce3ab02d0992705d33}{vec3}}(\textcolor{keywordtype}{double}\ e0,\ \textcolor{keywordtype}{double}\ e1,\ \textcolor{keywordtype}{double}\ e2);}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00035\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classvec3_a6c771306ba110c6fc430ff08b7b188a5}{x}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00041\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classvec3_a83d2fd06769d2993a94720f5fed1135b}{y}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00047\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classvec3_adf1b790d975cd19e6090f3cc15365f0b}{z}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00053\ \ \ \ \ \mbox{\hyperlink{classvec3}{vec3}}\ \mbox{\hyperlink{classvec3_a90828f3b3d7ab6f25661d927a29c1ceb}{operator-\/}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00060\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classvec3_a88d25304a341662a8031cf1badc99d5e}{operator[]}}(\textcolor{keywordtype}{int}\ i)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00061\ }
+\DoxyCodeLine{00067\ \ \ \ \ \textcolor{keywordtype}{double}\&\ \mbox{\hyperlink{classvec3_a88d25304a341662a8031cf1badc99d5e}{operator[]}}(\textcolor{keywordtype}{int}\ i);}
+\DoxyCodeLine{00068\ }
+\DoxyCodeLine{00074\ \ \ \ \ \mbox{\hyperlink{classvec3}{vec3}}\&\ \mbox{\hyperlink{classvec3_a614d7b802426ae5d50236e339a47cc16}{operator+=}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classvec3}{vec3}}\ \&v);}
+\DoxyCodeLine{00075\ }
+\DoxyCodeLine{00081\ \ \ \ \ \mbox{\hyperlink{classvec3}{vec3}}\&\ \mbox{\hyperlink{classvec3_a1b5def4d44d39f2813cc4530b41d5aa0}{operator*=}}(\textcolor{keywordtype}{double}\ t);}
+\DoxyCodeLine{00082\ }
+\DoxyCodeLine{00088\ \ \ \ \ \mbox{\hyperlink{classvec3}{vec3}}\&\ \mbox{\hyperlink{classvec3_a783be32f588c369095db3ca74065e5f3}{operator/=}}(\textcolor{keywordtype}{double}\ t);}
+\DoxyCodeLine{00089\ }
+\DoxyCodeLine{00094\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classvec3_a5d54726a6e5ea2a66ba687fe5d4b1c9a}{length}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00095\ }
+\DoxyCodeLine{00100\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classvec3_a1be4d540a0eef0cc388b6b0a23021ca4}{length\_squared}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00101\ \};}
+\DoxyCodeLine{00102\ }
+\DoxyCodeLine{00103\ \textcolor{comment}{//\ point3\ is\ just\ an\ alias\ for\ vec3,\ but\ useful\ for\ geometric\ clarity\ in\ the\ code.}}
+\DoxyCodeLine{00104\ \textcolor{keyword}{using\ }\mbox{\hyperlink{classvec3}{point3}}\ =\ \mbox{\hyperlink{classvec3}{vec3}};}
+\DoxyCodeLine{00105\ }
+\DoxyCodeLine{00106\ \textcolor{comment}{//\ Vector\ Utility\ Functions}}
+\DoxyCodeLine{00107\ }
+\DoxyCodeLine{00114\ std::ostream\&\ \mbox{\hyperlink{mat2_8h_ad2760b112984d6fde1d0fc32321df449}{operator<<}}(std::ostream\ \&out,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classvec3}{vec3}}\ \&v);}
+\DoxyCodeLine{00115\ }
+\DoxyCodeLine{00122\ \mbox{\hyperlink{classvec3}{vec3}}\ operator+(\textcolor{keyword}{const}\ \mbox{\hyperlink{classvec3}{vec3}}\ \&u,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classvec3}{vec3}}\ \&v);}
+\DoxyCodeLine{00123\ }
+\DoxyCodeLine{00130\ \mbox{\hyperlink{classvec3}{vec3}}\ operator-\/(\textcolor{keyword}{const}\ \mbox{\hyperlink{classvec3}{vec3}}\ \&u,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classvec3}{vec3}}\ \&v);}
+\DoxyCodeLine{00131\ }
+\DoxyCodeLine{00138\ \mbox{\hyperlink{classvec3}{vec3}}\ operator*(\textcolor{keyword}{const}\ \mbox{\hyperlink{classvec3}{vec3}}\ \&u,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classvec3}{vec3}}\ \&v);}
+\DoxyCodeLine{00139\ }
+\DoxyCodeLine{00146\ \mbox{\hyperlink{classvec3}{vec3}}\ operator*(\textcolor{keywordtype}{double}\ t,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classvec3}{vec3}}\ \&v);}
+\DoxyCodeLine{00147\ }
+\DoxyCodeLine{00154\ \mbox{\hyperlink{classvec3}{vec3}}\ operator*(\textcolor{keyword}{const}\ \mbox{\hyperlink{classvec3}{vec3}}\ \&v,\ \textcolor{keywordtype}{double}\ t);}
+\DoxyCodeLine{00155\ }
+\DoxyCodeLine{00162\ \mbox{\hyperlink{classvec3}{vec3}}\ operator/(\mbox{\hyperlink{classvec3}{vec3}}\ v,\ \textcolor{keywordtype}{double}\ t);}
+\DoxyCodeLine{00163\ }
+\DoxyCodeLine{00170\ \textcolor{keywordtype}{double}\ dot(\textcolor{keyword}{const}\ \mbox{\hyperlink{classvec3}{vec3}}\ \&u,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classvec3}{vec3}}\ \&v);}
+\DoxyCodeLine{00171\ }
+\DoxyCodeLine{00178\ \mbox{\hyperlink{classvec3}{vec3}}\ cross(\textcolor{keyword}{const}\ \mbox{\hyperlink{classvec3}{vec3}}\ \&u,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classvec3}{vec3}}\ \&v);}
+\DoxyCodeLine{00179\ }
+\DoxyCodeLine{00185\ \mbox{\hyperlink{classvec3}{vec3}}\ unit\_vector(\mbox{\hyperlink{classvec3}{vec3}}\ v);}
+\DoxyCodeLine{00186\ }
+\DoxyCodeLine{00187\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

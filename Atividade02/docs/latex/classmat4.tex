@@ -1,0 +1,100 @@
+\doxysection{mat4 Class Reference}
+\hypertarget{classmat4}{}\label{classmat4}\index{mat4@{mat4}}
+
+
+A class that represents a 4x4 matrix.  
+
+
+
+
+{\ttfamily \#include $<$mat4.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classmat4_acf3f0c37ff5c16e8fb1bfdde2bf87a0f}\label{classmat4_acf3f0c37ff5c16e8fb1bfdde2bf87a0f} 
+{\bfseries mat4} ()
+\begin{DoxyCompactList}\small\item\em Default constructor. Initializes the matrix to zero. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classmat4_a7a7d3edf7ff5a09b2d393aeb7549da48}{mat4}} (const \mbox{\hyperlink{classvec4}{vec4}} \&row0, const \mbox{\hyperlink{classvec4}{vec4}} \&row1, const \mbox{\hyperlink{classvec4}{vec4}} \&row2, const \mbox{\hyperlink{classvec4}{vec4}} \&row3)
+\begin{DoxyCompactList}\small\item\em Constructor that initializes the matrix with four rows. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classvec4}{vec4}} \& \mbox{\hyperlink{classmat4_a856496a5770f27f58e19064d27a05722}{operator\mbox{[}$\,$\mbox{]}}} (int i)
+\begin{DoxyCompactList}\small\item\em Overloads the \mbox{[}\mbox{]} operator to access rows of the matrix. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{classvec4}{vec4}} \& \mbox{\hyperlink{classmat4_a7ef205fd1c58f54786456e1adef48208}{operator\mbox{[}$\,$\mbox{]}}} (int i) const
+\begin{DoxyCompactList}\small\item\em Overloads the \mbox{[}\mbox{]} operator to access rows of the matrix. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classmat4_a4723c290b2fdacf80af18b79bf79d352}\label{classmat4_a4723c290b2fdacf80af18b79bf79d352} 
+\mbox{\hyperlink{classvec4}{vec4}} {\bfseries rows} \mbox{[}4\mbox{]}
+\begin{DoxyCompactList}\small\item\em The rows of the matrix. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A class that represents a 4x4 matrix. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classmat4_a7a7d3edf7ff5a09b2d393aeb7549da48}\label{classmat4_a7a7d3edf7ff5a09b2d393aeb7549da48} 
+\index{mat4@{mat4}!mat4@{mat4}}
+\index{mat4@{mat4}!mat4@{mat4}}
+\doxysubsubsection{\texorpdfstring{mat4()}{mat4()}}
+{\footnotesize\ttfamily mat4\+::mat4 (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classvec4}{vec4}} \&}]{row0,  }\item[{const \mbox{\hyperlink{classvec4}{vec4}} \&}]{row1,  }\item[{const \mbox{\hyperlink{classvec4}{vec4}} \&}]{row2,  }\item[{const \mbox{\hyperlink{classvec4}{vec4}} \&}]{row3 }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Constructor that initializes the matrix with four rows. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em row0} & The first row of the matrix. \\
+\hline
+{\em row1} & The second row of the matrix. \\
+\hline
+{\em row2} & The third row of the matrix. \\
+\hline
+{\em row3} & The fourth row of the matrix. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classmat4_a856496a5770f27f58e19064d27a05722}\label{classmat4_a856496a5770f27f58e19064d27a05722} 
+\index{mat4@{mat4}!operator\mbox{[}\mbox{]}@{operator[]}}
+\index{operator\mbox{[}\mbox{]}@{operator[]}!mat4@{mat4}}
+\doxysubsubsection{\texorpdfstring{operator[]()}{operator[]()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classvec4}{vec4}} \& mat4\+::operator\mbox{[}$\,$\mbox{]} (\begin{DoxyParamCaption}\item[{int}]{i }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Overloads the \mbox{[}\mbox{]} operator to access rows of the matrix. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em i} & The index of the row to access. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A reference to the i-\/th row of the matrix. 
+\end{DoxyReturn}
+\Hypertarget{classmat4_a7ef205fd1c58f54786456e1adef48208}\label{classmat4_a7ef205fd1c58f54786456e1adef48208} 
+\index{mat4@{mat4}!operator\mbox{[}\mbox{]}@{operator[]}}
+\index{operator\mbox{[}\mbox{]}@{operator[]}!mat4@{mat4}}
+\doxysubsubsection{\texorpdfstring{operator[]()}{operator[]()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{classvec4}{vec4}} \& mat4\+::operator\mbox{[}$\,$\mbox{]} (\begin{DoxyParamCaption}\item[{int}]{i }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Overloads the \mbox{[}\mbox{]} operator to access rows of the matrix. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em i} & The index of the row to access. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A constant reference to the i-\/th row of the matrix. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/\+Users/renanoliveira/\+Desktop/ufscar/\+Faculdade/\+Computacao Grafica/2023/\+Atividade02/includes/\mbox{\hyperlink{mat4_8h}{mat4.\+h}}\end{DoxyCompactItemize}

@@ -1,0 +1,28 @@
+\doxysection{vec4.\+h}
+\hypertarget{vec4_8h_source}{}\label{vec4_8h_source}\index{/Users/renanoliveira/Desktop/ufscar/Faculdade/Computacao Grafica/2023/Atividade02/includes/vec4.h@{/Users/renanoliveira/Desktop/ufscar/Faculdade/Computacao Grafica/2023/Atividade02/includes/vec4.h}}
+\mbox{\hyperlink{vec4_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#ifndef\ VEC4\_H}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#define\ VEC4\_H}}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ "{}vec3.h"{}}}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00019\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classvec4}{vec4}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classvec3}{vec3}}\ \{}
+\DoxyCodeLine{00020\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00021\ \ \ \ \ \textcolor{keywordtype}{double}\ w;}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00026\ \ \ \ \ \mbox{\hyperlink{classvec4_aa29685cf2528dae6ad7d74a7e01c1d6f}{vec4}}()\ :\ \mbox{\hyperlink{classvec3}{vec3}}(),\ w(1)\ \{\}}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00035\ \ \ \ \ \mbox{\hyperlink{classvec4_a59c9d5bcb082a53a1504d712fa62631e}{vec4}}(\textcolor{keywordtype}{double}\ \mbox{\hyperlink{classvec3_a6c771306ba110c6fc430ff08b7b188a5}{x}},\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classvec3_a83d2fd06769d2993a94720f5fed1135b}{y}},\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classvec3_adf1b790d975cd19e6090f3cc15365f0b}{z}},\ \textcolor{keywordtype}{double}\ w)\ :\ \mbox{\hyperlink{classvec3}{vec3}}(\mbox{\hyperlink{classvec3_a6c771306ba110c6fc430ff08b7b188a5}{x}},\ \mbox{\hyperlink{classvec3_a83d2fd06769d2993a94720f5fed1135b}{y}},\ \mbox{\hyperlink{classvec3_adf1b790d975cd19e6090f3cc15365f0b}{z}}),\ w(w)\ \{\}}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00041\ \ \ \ \ \mbox{\hyperlink{classvec4_ad1689fe3f14b00774537ea993bba31c8}{vec4}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classvec3}{vec3}}\ \&v3)\ :\ \mbox{\hyperlink{classvec3}{vec3}}(v3),\ w(1)\ \{\}}
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00048\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classvec4_aa5e585a52eaec464b7b9f790f70c9526}{operator==}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classvec4}{vec4}}\ \&other)\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classvec3_a6c771306ba110c6fc430ff08b7b188a5}{x}}()\ ==\ other.\mbox{\hyperlink{classvec3_a6c771306ba110c6fc430ff08b7b188a5}{x}}()\ \&\&\ \mbox{\hyperlink{classvec3_a83d2fd06769d2993a94720f5fed1135b}{y}}()\ ==\ other.\mbox{\hyperlink{classvec3_a83d2fd06769d2993a94720f5fed1135b}{y}}()\ \&\&\ \mbox{\hyperlink{classvec3_adf1b790d975cd19e6090f3cc15365f0b}{z}}()\ ==\ other.\mbox{\hyperlink{classvec3_adf1b790d975cd19e6090f3cc15365f0b}{z}}()\ \&\&\ w\ ==\ other.w;}
+\DoxyCodeLine{00050\ \ \ \ \ \}}
+\DoxyCodeLine{00051\ \};}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00053\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

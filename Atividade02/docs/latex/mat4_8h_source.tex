@@ -1,0 +1,41 @@
+\doxysection{mat4.\+h}
+\hypertarget{mat4_8h_source}{}\label{mat4_8h_source}\index{/Users/renanoliveira/Desktop/ufscar/Faculdade/Computacao Grafica/2023/Atividade02/includes/mat4.h@{/Users/renanoliveira/Desktop/ufscar/Faculdade/Computacao Grafica/2023/Atividade02/includes/mat4.h}}
+\mbox{\hyperlink{mat4_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#ifndef\ MAT4\_H}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#define\ MAT4\_H}}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ <cmath>}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{vec4_8h}{vec4.h}}"{}}}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00018\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classmat4}{mat4}}\ \{}
+\DoxyCodeLine{00019\ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00020\ \ \ \ \ \mbox{\hyperlink{classvec4}{vec4}}\ \mbox{\hyperlink{classmat4_a4723c290b2fdacf80af18b79bf79d352}{rows}}[4];\ }
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00025\ \ \ \ \ \mbox{\hyperlink{classmat4_acf3f0c37ff5c16e8fb1bfdde2bf87a0f}{mat4}}()\ \{\}}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00034\ \ \ \ \ \mbox{\hyperlink{classmat4_a7a7d3edf7ff5a09b2d393aeb7549da48}{mat4}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classvec4}{vec4}}\&\ row0,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classvec4}{vec4}}\&\ row1,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classvec4}{vec4}}\&\ row2,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classvec4}{vec4}}\&\ row3)\ \{}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classmat4_a4723c290b2fdacf80af18b79bf79d352}{rows}}[0]\ =\ row0;}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classmat4_a4723c290b2fdacf80af18b79bf79d352}{rows}}[1]\ =\ row1;}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classmat4_a4723c290b2fdacf80af18b79bf79d352}{rows}}[2]\ =\ row2;}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classmat4_a4723c290b2fdacf80af18b79bf79d352}{rows}}[3]\ =\ row3;}
+\DoxyCodeLine{00039\ \ \ \ \ \}}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00046\ \ \ \ \ \mbox{\hyperlink{classvec4}{vec4}}\&\ \mbox{\hyperlink{classmat4_a856496a5770f27f58e19064d27a05722}{operator[]}}(\textcolor{keywordtype}{int}\ i)\ \{}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classmat4_a4723c290b2fdacf80af18b79bf79d352}{rows}}[i];}
+\DoxyCodeLine{00048\ \ \ \ \ \}}
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00055\ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{classvec4}{vec4}}\&\ \mbox{\hyperlink{classmat4_a7ef205fd1c58f54786456e1adef48208}{operator[]}}(\textcolor{keywordtype}{int}\ i)\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classmat4_a4723c290b2fdacf80af18b79bf79d352}{rows}}[i];}
+\DoxyCodeLine{00057\ \ \ \ \ \}}
+\DoxyCodeLine{00058\ \};}
+\DoxyCodeLine{00059\ }
+\DoxyCodeLine{00066\ \textcolor{keyword}{inline}\ std::ostream\&\ \mbox{\hyperlink{mat4_8h_af90134c2effe2994c56b484f4ea068ee}{operator<<}}(std::ostream\&\ out,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classmat4}{mat4}}\&\ m)\ \{}
+\DoxyCodeLine{00067\ \ \ \ \ \textcolor{keywordflow}{return}\ out\ <<\ m[0]\ <<\ \textcolor{charliteral}{'\(\backslash\)n'}\ <<\ m[1]\ <<\ \textcolor{charliteral}{'\(\backslash\)n'}\ <<\ m[2]\ <<\ \textcolor{charliteral}{'\(\backslash\)n'}\ <<\ m[3];}
+\DoxyCodeLine{00068\ \}}
+\DoxyCodeLine{00069\ }
+\DoxyCodeLine{00070\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

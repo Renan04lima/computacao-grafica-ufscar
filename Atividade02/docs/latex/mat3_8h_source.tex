@@ -1,0 +1,43 @@
+\doxysection{mat3.\+h}
+\hypertarget{mat3_8h_source}{}\label{mat3_8h_source}\index{/Users/renanoliveira/Desktop/ufscar/Faculdade/Computacao Grafica/2023/Atividade02/includes/mat3.h@{/Users/renanoliveira/Desktop/ufscar/Faculdade/Computacao Grafica/2023/Atividade02/includes/mat3.h}}
+\mbox{\hyperlink{mat3_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#ifndef\ MAT3\_H}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#define\ MAT3\_H}}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ "{}vec3.h"{}}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ <cmath>}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classmat3}{mat3}}\ \{}
+\DoxyCodeLine{00015\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00016\ \ \ \ \ \mbox{\hyperlink{classvec3}{vec3}}\ \mbox{\hyperlink{classmat3_a691dd471034f6f8534b763d9468ec5c7}{rows}}[3];\ }
+\DoxyCodeLine{00017\ }
+\DoxyCodeLine{00021\ \ \ \ \ \mbox{\hyperlink{classmat3_a463027040addb1c56fe84c91b74b8d79}{mat3}}()\ \{\}}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00029\ \ \ \ \ \mbox{\hyperlink{classmat3_ad2f5a0199b286af3a78186ab4abe534b}{mat3}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classvec3}{vec3}}\ \&row0,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classvec3}{vec3}}\ \&row1,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classvec3}{vec3}}\ \&row2)\ \{}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classmat3_a691dd471034f6f8534b763d9468ec5c7}{rows}}[0]\ =\ row0;}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classmat3_a691dd471034f6f8534b763d9468ec5c7}{rows}}[1]\ =\ row1;}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classmat3_a691dd471034f6f8534b763d9468ec5c7}{rows}}[2]\ =\ row2;}
+\DoxyCodeLine{00033\ \ \ \ \ \}}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00040\ \ \ \ \ \mbox{\hyperlink{classvec3}{vec3}}\ \&\mbox{\hyperlink{classmat3_ae44b2c7da5e1d0fa87b30d7d00f4e4f3}{operator[]}}(\textcolor{keywordtype}{int}\ i)\ \{}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classmat3_a691dd471034f6f8534b763d9468ec5c7}{rows}}[i];}
+\DoxyCodeLine{00042\ \ \ \ \ \}}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00049\ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{classvec3}{vec3}}\ \&\mbox{\hyperlink{classmat3_ae81c2a3c65abd17aab922a2710692b8a}{operator[]}}(\textcolor{keywordtype}{int}\ i)\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classmat3_a691dd471034f6f8534b763d9468ec5c7}{rows}}[i];}
+\DoxyCodeLine{00051\ \ \ \ \ \}}
+\DoxyCodeLine{00052\ \};}
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00060\ \textcolor{keyword}{inline}\ std::ostream\ \&\mbox{\hyperlink{mat3_8h_afcfb511abd8a6c761c0c37f3a9a32e7a}{operator<<}}(std::ostream\ \&out,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classmat3}{mat3}}\ \&m)\ \{}
+\DoxyCodeLine{00061\ \ \ \ \ out\ <<\ m[0].x()\ <<\ \textcolor{stringliteral}{"{}\ "{}}\ <<\ m[0].y()\ <<\ \textcolor{stringliteral}{"{}\ "{}}\ <<\ m[0].z()\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
+\DoxyCodeLine{00062\ \ \ \ \ out\ <<\ m[1].x()\ <<\ \textcolor{stringliteral}{"{}\ "{}}\ <<\ m[1].y()\ <<\ \textcolor{stringliteral}{"{}\ "{}}\ <<\ m[1].z()\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
+\DoxyCodeLine{00063\ \ \ \ \ out\ <<\ m[2].x()\ <<\ \textcolor{stringliteral}{"{}\ "{}}\ <<\ m[2].y()\ <<\ \textcolor{stringliteral}{"{}\ "{}}\ <<\ m[2].z()\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
+\DoxyCodeLine{00064\ \ \ \ \ \textcolor{keywordflow}{return}\ out;}
+\DoxyCodeLine{00065\ \}}
+\DoxyCodeLine{00066\ }
+\DoxyCodeLine{00067\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

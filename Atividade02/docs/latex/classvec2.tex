@@ -1,0 +1,106 @@
+\doxysection{vec2 Class Reference}
+\hypertarget{classvec2}{}\label{classvec2}\index{vec2@{vec2}}
+
+
+A class that represents a 2D vector, derived from the \doxylink{classvec3}{vec3} class.  
+
+
+
+
+{\ttfamily \#include $<$vec2.\+h$>$}
+
+Inheritance diagram for vec2\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classvec2}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classvec2_ae12a1a221eca3561809600a11b58eaa3}\label{classvec2_ae12a1a221eca3561809600a11b58eaa3} 
+{\bfseries vec2} ()
+\begin{DoxyCompactList}\small\item\em Default constructor. Initializes the vector to zero. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classvec2_a6dfddbbde82f1c5260eded6fed6bb962}{vec2}} (double \mbox{\hyperlink{classvec3_a6c771306ba110c6fc430ff08b7b188a5}{x}}, double \mbox{\hyperlink{classvec3_a83d2fd06769d2993a94720f5fed1135b}{y}})
+\begin{DoxyCompactList}\small\item\em Constructor that initializes the vector with two components. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classvec2}{vec2}} \mbox{\hyperlink{classvec2_abb9c2601c0d42c5ce7dd8350c6dfe6ff}{operator-\/}} () const
+\begin{DoxyCompactList}\small\item\em Overloads the unary minus operator to return the negation of the vector. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classvec3}{vec3}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classvec3_aea9f3480a6ccd7ce3ab02d0992705d33}{vec3}} ()
+\begin{DoxyCompactList}\small\item\em Default constructor. Initializes the vector to zero. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classvec3_adce58545a12fd240ec4173ed9b62663b}{vec3}} (double e0, double e1, double e2)
+\begin{DoxyCompactList}\small\item\em Constructor that initializes the vector with three components. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classvec3_a6c771306ba110c6fc430ff08b7b188a5}{x}} () const
+\begin{DoxyCompactList}\small\item\em Getter for the x component of the vector. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classvec3_a83d2fd06769d2993a94720f5fed1135b}{y}} () const
+\begin{DoxyCompactList}\small\item\em Getter for the y component of the vector. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classvec3_adf1b790d975cd19e6090f3cc15365f0b}{z}} () const
+\begin{DoxyCompactList}\small\item\em Getter for the z component of the vector. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classvec3}{vec3}} \mbox{\hyperlink{classvec3_a90828f3b3d7ab6f25661d927a29c1ceb}{operator-\/}} () const
+\begin{DoxyCompactList}\small\item\em Overloads the unary minus operator to return the negation of the vector. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classvec3_a88d25304a341662a8031cf1badc99d5e}{operator\mbox{[}$\,$\mbox{]}}} (int i) const
+\begin{DoxyCompactList}\small\item\em Overloads the \mbox{[}\mbox{]} operator to access components of the vector. \end{DoxyCompactList}\item 
+double \& \mbox{\hyperlink{classvec3_abcfad16e7d2928aed8a32832a4d101c7}{operator\mbox{[}$\,$\mbox{]}}} (int i)
+\begin{DoxyCompactList}\small\item\em Overloads the \mbox{[}\mbox{]} operator to access components of the vector. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classvec3}{vec3}} \& \mbox{\hyperlink{classvec3_a614d7b802426ae5d50236e339a47cc16}{operator+=}} (const \mbox{\hyperlink{classvec3}{vec3}} \&v)
+\begin{DoxyCompactList}\small\item\em Overloads the += operator to add another vector to this vector. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classvec3}{vec3}} \& \mbox{\hyperlink{classvec3_a1b5def4d44d39f2813cc4530b41d5aa0}{operator\texorpdfstring{$\ast$}{*}=}} (double t)
+\begin{DoxyCompactList}\small\item\em Overloads the \texorpdfstring{$\ast$}{*}= operator to multiply this vector by a scalar. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classvec3}{vec3}} \& \mbox{\hyperlink{classvec3_a783be32f588c369095db3ca74065e5f3}{operator/=}} (double t)
+\begin{DoxyCompactList}\small\item\em Overloads the /= operator to divide this vector by a scalar. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classvec3_a5d54726a6e5ea2a66ba687fe5d4b1c9a}{length}} () const
+\begin{DoxyCompactList}\small\item\em Calculates the length of the vector. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classvec3_a1be4d540a0eef0cc388b6b0a23021ca4}{length\+\_\+squared}} () const
+\begin{DoxyCompactList}\small\item\em Calculates the squared length of the vector. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Public Attributes inherited from \mbox{\hyperlink{classvec3}{vec3}}}
+\begin{DoxyCompactItemize}
+\item 
+double {\bfseries e} \mbox{[}3\mbox{]}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A class that represents a 2D vector, derived from the \doxylink{classvec3}{vec3} class. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classvec2_a6dfddbbde82f1c5260eded6fed6bb962}\label{classvec2_a6dfddbbde82f1c5260eded6fed6bb962} 
+\index{vec2@{vec2}!vec2@{vec2}}
+\index{vec2@{vec2}!vec2@{vec2}}
+\doxysubsubsection{\texorpdfstring{vec2()}{vec2()}}
+{\footnotesize\ttfamily vec2\+::vec2 (\begin{DoxyParamCaption}\item[{double}]{x,  }\item[{double}]{y }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Constructor that initializes the vector with two components. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & The x component of the vector. \\
+\hline
+{\em y} & The y component of the vector. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classvec2_abb9c2601c0d42c5ce7dd8350c6dfe6ff}\label{classvec2_abb9c2601c0d42c5ce7dd8350c6dfe6ff} 
+\index{vec2@{vec2}!operator-\/@{operator-\/}}
+\index{operator-\/@{operator-\/}!vec2@{vec2}}
+\doxysubsubsection{\texorpdfstring{operator-\/()}{operator-()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classvec2}{vec2}} vec2\+::operator-\/ (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Overloads the unary minus operator to return the negation of the vector. 
+
+\begin{DoxyReturn}{Returns}
+A new \doxylink{classvec2}{vec2} object that is the negation of the current object. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/\+Users/renanoliveira/\+Desktop/ufscar/\+Faculdade/\+Computacao Grafica/2023/\+Atividade02/includes/\mbox{\hyperlink{vec2_8h}{vec2.\+h}}\end{DoxyCompactItemize}
