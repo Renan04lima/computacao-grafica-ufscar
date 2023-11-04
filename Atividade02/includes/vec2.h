@@ -4,9 +4,13 @@
 #include "vec3.h"
 
 class vec2 : public vec3 {
-  public:
+public:
     vec2() : vec3() {}
     vec2(double x, double y) : vec3(x, y, 0) {}
+
+    vec2 operator-() const {
+        return vec2(-x(), -y());
+    }
 };
 
 #endif
