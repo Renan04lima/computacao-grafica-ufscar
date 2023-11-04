@@ -25,8 +25,9 @@ class mat2 {
 };
 
 
-inline std::ostream& operator<<(std::ostream& out, const mat2& m) {
-    return out << m[0] << '\n' << m[1];
+inline std::ostream& operator<<(std::ostream &out, const mat2 &m) {
+    out << m[0].x() << " " << m[0].y() << "\n";
+    out << m[1].x() << " " << m[1].y() << "\n";
+    return out;
 }
-
 #endif
