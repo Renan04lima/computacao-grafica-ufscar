@@ -1,0 +1,38 @@
+\chapter{Atividade 03}
+\hypertarget{index}{}\label{index}\index{Atividade 03@{Atividade 03}}
+\label{index_md__2_users_2renanoliveira_2_desktop_2ufscar_2_faculdade_2_computacao_01_grafica_22023_2_atividade03_2_r_e_a_d_m_e}%
+\Hypertarget{index_md__2_users_2renanoliveira_2_desktop_2ufscar_2_faculdade_2_computacao_01_grafica_22023_2_atividade03_2_r_e_a_d_m_e}%
+ {\bfseries{Descrição\+:}}
+
+A classe {\ttfamily \doxylink{class_obj_loader}{Obj\+Loader}} é uma implementação em C++ para carregar e processar arquivos no formato Wavefront OBJ. Essa classe permite a leitura de vértices, coordenadas de textura, normais e faces a partir de arquivos {\ttfamily .obj}, fornecendo uma estrutura de dados fácil de usar para manipulação de modelos 3D.
+
+{\bfseries{Recursos\+:}}
+
+
+\begin{DoxyItemize}
+\item Carrega arquivos OBJ contendo vértices, coordenadas de textura, normais e faces.
+\item Fácil acesso aos dados carregados através de métodos getters.
+\item Suporte para testes unitários usando o Google Test (gtest).
+\end{DoxyItemize}
+
+{\bfseries{Exemplo de Uso\+:}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\$\ g++\ -\/o\ output\ main.cpp\ includes/*.cpp\ \ -\/Wall}
+\DoxyCodeLine{\$\ ./output}
+
+\end{DoxyCode}
+
+
+{\bfseries{Testes Unitários\+:}}
+
+Os testes unitários são realizados usando o Google Test (gtest). Certifique-\/se de que o ambiente esteja configurado corretamente antes de executar os testes.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\$\ g++\ -\/std=c++14\ run\_tests.cpp\ tests/*.cpp\ includes/*.cpp\ -\/lgtest\ -\/lgtest\_main\ -\/pthread\ -\/o\ run\_tests}
+\DoxyCodeLine{\$\ ./run\_tests}
+
+\end{DoxyCode}
+ 
