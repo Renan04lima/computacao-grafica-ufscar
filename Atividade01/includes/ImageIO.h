@@ -16,12 +16,6 @@ private:
     std::vector<unsigned char> image_data;
 
     /**
-     * @brief Salva a imagem em formato PNG.
-     * @param filename O nome do arquivo PNG de saída.
-     */
-    void save_png(const char *filename);
-
-    /**
      * @brief Preenche o plano de fundo da imagem com uma cor RGBA.
      * @param r Componente vermelha (0-255).
      * @param g Componente verde (0-255).
@@ -32,11 +26,25 @@ private:
 
 public:
     /**
-     * @brief Construtor da classe ImageIO.
+     * @brief Construtor padrão da classe ImageIO.
      * @param image_width A largura da imagem em pixels.
      * @param image_height A altura da imagem em pixels.
      */
     ImageIO(int image_width, int image_height);
+
+    /**
+     * @brief Construtor da classe ImageIO.
+     * @param image_width A largura da imagem em pixels.
+     * @param image_height A altura da imagem em pixels.
+     * @param image_data O vetor com os pixels da imagem.
+     */
+    ImageIO(int image_width, int image_height, const std::vector<unsigned char>& image_data);
+
+    /**
+     * @brief Salva a imagem em formato PNG.
+     * @param filename O nome do arquivo PNG de saída.
+     */
+    void save_png(const char *filename);
 
     /**
      * @brief Gera um gradiente na imagem.

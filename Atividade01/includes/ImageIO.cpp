@@ -19,6 +19,13 @@ ImageIO::ImageIO(int image_width, int image_height) {
     this->image_data = std::vector<unsigned char>(image_width * image_height * 4);
 }
 
+ImageIO::ImageIO(int image_width, int image_height, const std::vector<unsigned char>& image_data) {
+    this->image_width = image_width;
+    this->image_height = image_height;
+    // Create a vector to store the image pixels (RGBA)
+    this->image_data = image_data;
+}
+
 // Member function to save PNG
 void ImageIO::save_png(const char *filename) {
     // Save the image in PNG format using lodepng

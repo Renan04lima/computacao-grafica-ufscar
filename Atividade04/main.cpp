@@ -4,6 +4,8 @@
  * @brief Programa principal, onde é feita a visualização da esfera, triangulo e objeto como todo.
  */
 
+#include "../Atividade01/includes/ImageIO.h"
+#include "../Atividade01/includes/ImageIO.cpp"
 #include "../Atividade02/includes/color.h"
 #include "../Atividade02/includes/vec3.h"
 #include "../Atividade02/includes/vec3.cpp"
@@ -67,42 +69,31 @@ int main() {
     auto viewport_upper_left = camera_center - vec3(0, 0, focal_length) - viewport_u / 2 - viewport_v / 2;
     auto pixel00_loc = viewport_upper_left + 0.5 * (pixel_delta_u + pixel_delta_v);
 
-    // Render
 
-    std::cout << "P3\n"
-              << image_width << " " << image_height << "\n255\n";
-
+    // Visualização da esfera
+    std::vector<unsigned char> image_data = std::vector<unsigned char>(image_width * image_height * 4);
     for (int j = 0; j < image_height; ++j) {
-        std::clog << "\rScanlines remaining: " << (image_height - j) << ' ' << std::flush;
         for (int i = 0; i < image_width; ++i) {
             auto pixel_center = pixel00_loc + (i * pixel_delta_u) + (j * pixel_delta_v);
             auto ray_direction = pixel_center - camera_center;
             ray r(camera_center, ray_direction);
 
             color pixel_color = ray_color(r);
-            write_color(std::cout, pixel_color);
+
+            // Mapeie a cor para valores de 0 a 255 e adicione ao vetor image_data
+            image_data[(i + j * image_width) * 4] = static_cast<unsigned char>(255.999 * pixel_color.x());
+            image_data[(i + j * image_width) * 4 + 1] = static_cast<unsigned char>(255.999 * pixel_color.y());
+            image_data[(i + j * image_width) * 4 + 2] = static_cast<unsigned char>(255.999 * pixel_color.z());
+            image_data[(i + j * image_width) * 4 + 3] = 255;  // Alpha (totalmente opaco)
         }
     }
+    ImageIO image(image_width, image_height, image_data);
 
-    // std::cout << "P3\n"
-    //           << image_width << ' ' << image_height << "\n255\n";
+    image.save_png("outputs/sphere.png");
 
-    // for (int j = image_height - 1; j >= 0; --j) {
-    //     std::cerr << "\rScanlines remaining: " << j << ' ' << std::flush;
-    //     for (int i = 0; i < image_width; ++i) {
-    //         auto u = double(i) / (image_width - 1);
-    //         auto v = double(j) / (image_height - 1);
-    //         ray r(origin, lower_left_corner + u * horizontal + v * vertical - origin);
-    //         color pixel_color = ray_color(r);
-    //         write_color(std::cout, pixel_color);
-    //     }
-    // }
+    // Visualização do triangulo
 
-    // std::cerr << "\nDone.\n";
-
-    // classe de visualização do triangulo
-
-    // classe de visualização do objeto
+    // Visualização do objeto
 
     return 0;
 }
