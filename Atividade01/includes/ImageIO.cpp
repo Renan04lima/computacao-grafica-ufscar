@@ -5,8 +5,8 @@
  */
 
 
-
-#include "lodepng.h"
+#include "../../lodepng/lodepng.h"
+#include "../../lodepng/lodepng.cpp"
 #include <iostream>
 
 #include "ImageIO.h"

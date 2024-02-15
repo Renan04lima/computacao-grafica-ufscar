@@ -43,9 +43,14 @@ void ObjLoader::LoadObj(const std::string& filename) {
             normals.push_back(normal);
         } else if (token == "f") {
             Face face;
-            iss >> face.v1 >> face.vt1 >> face.vn1
-                >> face.v2 >> face.vt2 >> face.vn2
-                >> face.v3 >> face.vt3 >> face.vn3;
+            int v1, v2, v3;
+            iss >> v1 >> v2 >> v3;
+            
+            // Ajuste para considerar apenas os índices de vértices
+            face.v1 = v1;
+            face.v2 = v2;
+            face.v3 = v3;
+
             faces.push_back(face);
         }
     }

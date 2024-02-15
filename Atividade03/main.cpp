@@ -10,7 +10,7 @@
 
 int main() {
     ObjLoader objLoader;
-    objLoader.LoadObj("/Users/renanoliveira/Desktop/ufscar/Faculdade/Computacao Grafica/2023/Atividade03/indoor_plant.obj");
+    objLoader.LoadObj("/Users/renanoliveira/Desktop/ufscar/2023-02/computacao-grafica/atividades-projeto/Atividade03/indoor_plant.obj");
 
     std::vector<Vertex> vertices = objLoader.GetVertices();
     std::vector<TextureCoord> textureCoords = objLoader.GetTextureCoords();

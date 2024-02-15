@@ -25,9 +25,7 @@ struct Normal {
 };
 
 struct Face {
-    int v1, vt1, vn1;
-    int v2, vt2, vn2;
-    int v3, vt3, vn3;
+    int v1, v2, v3;
 };
 
 /**
