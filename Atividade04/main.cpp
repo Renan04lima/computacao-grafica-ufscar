@@ -15,6 +15,15 @@
 
 #include <iostream>
 #include <vector>
+
+/**
+ * @brief Verifica se um raio atinge uma esfera.
+ *
+ * @param center Centro da esfera.
+ * @param radius Raio da esfera.
+ * @param r Raio a ser verificado.
+ * @return true se o raio atinge a esfera, false caso contrário.
+ */
 bool hit_sphere(const point3 &center, double radius, const ray &r) {
     vec3 oc = r.origin() - center;
     auto a = dot(r.direction(), r.direction());
@@ -24,6 +33,15 @@ bool hit_sphere(const point3 &center, double radius, const ray &r) {
     return (discriminant >= 0);
 }
 
+/**
+ * @brief Verifica se um raio atinge um triângulo.
+ *
+ * @param vertex0 Vértice 0 do triângulo.
+ * @param vertex1 Vértice 1 do triângulo.
+ * @param vertex2 Vértice 2 do triângulo.
+ * @param r Raio a ser verificado.
+ * @return true se o raio atinge o triângulo, false caso contrário.
+ */
 bool hit_triangle(const point3& vertex0, const point3& vertex1, const point3& vertex2, const ray& r) {
     vec3 e1 = vertex1 - vertex0;
     vec3 e2 = vertex2 - vertex0;
@@ -51,11 +69,25 @@ bool hit_triangle(const point3& vertex0, const point3& vertex1, const point3& ve
     return (t > 0.0001);
 }
 
+/**
+ * @brief Normaliza um vetor.
+ *
+ * @param v Vetor a ser normalizado.
+ * @return Vetor normalizado.
+ */
 vec3 normalize(const vec3& v) {
     double length = sqrt(v.x() * v.x() + v.y() * v.y() + v.z() * v.z());
     return vec3(v.x() / length, v.y() / length, v.z() / length);
 }
 
+/**
+ * @brief Verifica se um raio atinge um hexágono.
+ *
+ * @param center Centro do hexágono.
+ * @param radius Raio do hexágono.
+ * @param r Raio a ser verificado.
+ * @return true se o raio atinge o hexágono, false caso contrário.
+ */
 bool hit_hexagon(const point3& center, double radius, const ray& r) {
     vec3 hexagon_normal(0, 0, 1);  // Assume que o hexágono está no plano XY
 
@@ -80,6 +112,15 @@ bool hit_hexagon(const point3& center, double radius, const ray& r) {
     return false;
 }
 
+/**
+ * @brief Calcula a cor resultante de um raio.
+ *
+ * @param r Raio a ser traçado.
+ * @param type Tipo de objeto a ser verificado ("sphere", "triangle", "object").
+ * @param vertices Ponteiro para o vetor de vértices (necessário para "object").
+ * @param faces Ponteiro para o vetor de faces (necessário para "object").
+ * @return Cor resultante do raio.
+ */
 color ray_color(const ray &r, std::string type, std::vector<Vertex>* vertices = nullptr, std::vector<Face>* faces = nullptr) {
     if (type == "sphere") {
         if (hit_sphere(point3(0, 0, -1), 0.5, r)) {
@@ -144,7 +185,6 @@ int main() {
     vec3 vertical(0.0, 2.0, 0.0);
 
     // Image
-
     auto aspect_ratio = 16.0 / 9.0;
     int image_width = 400;
 

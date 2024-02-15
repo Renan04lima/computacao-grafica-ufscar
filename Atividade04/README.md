@@ -2,33 +2,30 @@
 
 **Descrição:**
 
-Tutorial 1: https://raytracing.github.io/books/RayTracingInOneWeekend.html
-Tutorial 2: https://raytracing.github.io/books/RayTracingTheNextWeek.html
+Este projeto visa a implementação de uma técnica de renderização chamada traçado de raios (ray tracing), com base nos princípios apresentados nos tutoriais "Ray Tracing in One Weekend" e "Ray Tracing: The Next Week", disponíveis em:
 
-1) Siga o "tutorial 1" até a seção 5
-2) Implemente a visualização da esfera, integrando com as implementações anteriores (Atividade 1 e Atividade 2)
-3) Veja a seção 6.2 do "tutorial 2"
-4) Implemente a visualização de um triângulo
-5) Com a implementação da Atividade 3, visualize um objeto todo, lido de um arquivo
-6) Documente adequadamente
+- Tutorial 1: [Ray Tracing in One Weekend](https://raytracing.github.io/books/RayTracingInOneWeekend.html)
+- Tutorial 2: [Ray Tracing: The Next Week](https://raytracing.github.io/books/RayTracingTheNextWeek.html)
 
-Realiza a visualização da esfera, utilizando as Classes de manipulação de vetores das Atividades 1 e 2.
+A atividade se concentra na visualização de uma esfera e de um triângulo, integrando conceitos desenvolvidos nas Atividades 1 e 2. Além disso, incorpora a implementação da Atividade 3, que permite visualizar um objeto complexo lido a partir de um arquivo.
 
-**Recursos:**
+**Funcionalidades Principais:**
 
+1. **Esfera e Triângulo:** Implementação da visualização de esferas e triângulos utilizando técnicas de traçado de raios.
+
+2. **Classes de Manipulação de Vetores:** Utilização das classes desenvolvidas nas Atividades 1 e 2 para manipulação eficiente de vetores.
+
+3. **Leitura de Objeto a partir de Arquivo:** Implementação da leitura de objetos a partir de arquivos no formato .obj, permitindo a visualização de modelos 3D mais complexos.
 
 **Exemplo de Uso:**
 
-```bash
-$ g++ -o output main.cpp includes/*.cpp  -Wall
-$ ./output
+- adicionar Lib para salvar em PNG
+```powershell
+$ git clone https://github.com/lvandeve/lodepng.git
 ```
 
-**Testes Unitários:**
-
-Os testes unitários são realizados usando o Google Test (gtest). Certifique-se de que o ambiente esteja configurado corretamente antes de executar os testes.
-
+- compilar e executar o código, as imagens serão salvas na pasta `/outputs`
 ```bash
-$ g++ -std=c++14 run_tests.cpp tests/*.cpp includes/*.cpp -lgtest -lgtest_main -pthread -o run_tests
-$ ./run_tests
+$ g++ -o output main.cpp
+$ ./output
 ```

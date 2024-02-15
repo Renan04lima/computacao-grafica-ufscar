@@ -1,0 +1,154 @@
+\doxysection{/\+Users/renanoliveira/\+Desktop/ufscar/2023-\/02/computacao-\/grafica/atividades-\/projeto/\+Atividade04/main.cpp File Reference}
+\hypertarget{main_8cpp}{}\label{main_8cpp}\index{/Users/renanoliveira/Desktop/ufscar/2023-\/02/computacao-\/grafica/atividades-\/projeto/Atividade04/main.cpp@{/Users/renanoliveira/Desktop/ufscar/2023-\/02/computacao-\/grafica/atividades-\/projeto/Atividade04/main.cpp}}
+
+
+Programa principal, onde é feita a visualização da esfera, triangulo e objeto como todo.  
+
+
+{\ttfamily \#include "{}../\+Atividade01/includes/\+Image\+IO.\+h"{}}\newline
+{\ttfamily \#include "{}../\+Atividade01/includes/\+Image\+IO.\+cpp"{}}\newline
+{\ttfamily \#include "{}../\+Atividade02/includes/color.\+h"{}}\newline
+{\ttfamily \#include "{}../\+Atividade02/includes/vec3.\+h"{}}\newline
+{\ttfamily \#include "{}../\+Atividade02/includes/vec3.\+cpp"{}}\newline
+{\ttfamily \#include "{}../\+Atividade03/includes/\+Obj\+Loader.\+h"{}}\newline
+{\ttfamily \#include "{}../\+Atividade03/includes/\+Obj\+Loader.\+cpp"{}}\newline
+{\ttfamily \#include "{}includes/ray.\+h"{}}\newline
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{main_8cpp_ae048c0b87e05b8ec9b11a71267c7c4a8}{hit\+\_\+sphere}} (const point3 \&center, double radius, const \mbox{\hyperlink{classray}{ray}} \&r)
+\begin{DoxyCompactList}\small\item\em Verifica se um raio atinge uma esfera. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{main_8cpp_abc6a24d31573dbf5df8fae6ba151d31c}{hit\+\_\+triangle}} (const point3 \&vertex0, const point3 \&vertex1, const point3 \&vertex2, const \mbox{\hyperlink{classray}{ray}} \&r)
+\begin{DoxyCompactList}\small\item\em Verifica se um raio atinge um triângulo. \end{DoxyCompactList}\item 
+vec3 \mbox{\hyperlink{main_8cpp_a01acb1dfd0e7dc6b719a19c649acf8ce}{normalize}} (const vec3 \&v)
+\begin{DoxyCompactList}\small\item\em Normaliza um vetor. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{main_8cpp_a8c23f3438c6cc7f559a7cf87ef1ace7e}{hit\+\_\+hexagon}} (const point3 \&center, double radius, const \mbox{\hyperlink{classray}{ray}} \&r)
+\begin{DoxyCompactList}\small\item\em Verifica se um raio atinge um hexágono. \end{DoxyCompactList}\item 
+color \mbox{\hyperlink{main_8cpp_a063bdee28d00237b469d3ba2f234fda6}{ray\+\_\+color}} (const \mbox{\hyperlink{classray}{ray}} \&r, std\+::string type, std\+::vector$<$ Vertex $>$ \texorpdfstring{$\ast$}{*}vertices=nullptr, std\+::vector$<$ Face $>$ \texorpdfstring{$\ast$}{*}faces=nullptr)
+\begin{DoxyCompactList}\small\item\em Calcula a cor resultante de um raio. \end{DoxyCompactList}\item 
+\Hypertarget{main_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}\label{main_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4} 
+int {\bfseries main} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Programa principal, onde é feita a visualização da esfera, triangulo e objeto como todo. 
+
+\begin{DoxyAuthor}{Author}
+Renan Oliveira de Barros Lima 
+\end{DoxyAuthor}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{main_8cpp_a8c23f3438c6cc7f559a7cf87ef1ace7e}\label{main_8cpp_a8c23f3438c6cc7f559a7cf87ef1ace7e} 
+\index{main.cpp@{main.cpp}!hit\_hexagon@{hit\_hexagon}}
+\index{hit\_hexagon@{hit\_hexagon}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{hit\_hexagon()}{hit\_hexagon()}}
+{\footnotesize\ttfamily bool hit\+\_\+hexagon (\begin{DoxyParamCaption}\item[{const point3 \&}]{center,  }\item[{double}]{radius,  }\item[{const \mbox{\hyperlink{classray}{ray}} \&}]{r }\end{DoxyParamCaption})}
+
+
+
+Verifica se um raio atinge um hexágono. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em center} & Centro do hexágono. \\
+\hline
+{\em radius} & Raio do hexágono. \\
+\hline
+{\em r} & Raio a ser verificado. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true se o raio atinge o hexágono, false caso contrário. 
+\end{DoxyReturn}
+\Hypertarget{main_8cpp_ae048c0b87e05b8ec9b11a71267c7c4a8}\label{main_8cpp_ae048c0b87e05b8ec9b11a71267c7c4a8} 
+\index{main.cpp@{main.cpp}!hit\_sphere@{hit\_sphere}}
+\index{hit\_sphere@{hit\_sphere}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{hit\_sphere()}{hit\_sphere()}}
+{\footnotesize\ttfamily bool hit\+\_\+sphere (\begin{DoxyParamCaption}\item[{const point3 \&}]{center,  }\item[{double}]{radius,  }\item[{const \mbox{\hyperlink{classray}{ray}} \&}]{r }\end{DoxyParamCaption})}
+
+
+
+Verifica se um raio atinge uma esfera. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em center} & Centro da esfera. \\
+\hline
+{\em radius} & Raio da esfera. \\
+\hline
+{\em r} & Raio a ser verificado. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true se o raio atinge a esfera, false caso contrário. 
+\end{DoxyReturn}
+\Hypertarget{main_8cpp_abc6a24d31573dbf5df8fae6ba151d31c}\label{main_8cpp_abc6a24d31573dbf5df8fae6ba151d31c} 
+\index{main.cpp@{main.cpp}!hit\_triangle@{hit\_triangle}}
+\index{hit\_triangle@{hit\_triangle}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{hit\_triangle()}{hit\_triangle()}}
+{\footnotesize\ttfamily bool hit\+\_\+triangle (\begin{DoxyParamCaption}\item[{const point3 \&}]{vertex0,  }\item[{const point3 \&}]{vertex1,  }\item[{const point3 \&}]{vertex2,  }\item[{const \mbox{\hyperlink{classray}{ray}} \&}]{r }\end{DoxyParamCaption})}
+
+
+
+Verifica se um raio atinge um triângulo. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em vertex0} & Vértice 0 do triângulo. \\
+\hline
+{\em vertex1} & Vértice 1 do triângulo. \\
+\hline
+{\em vertex2} & Vértice 2 do triângulo. \\
+\hline
+{\em r} & Raio a ser verificado. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true se o raio atinge o triângulo, false caso contrário. 
+\end{DoxyReturn}
+\Hypertarget{main_8cpp_a01acb1dfd0e7dc6b719a19c649acf8ce}\label{main_8cpp_a01acb1dfd0e7dc6b719a19c649acf8ce} 
+\index{main.cpp@{main.cpp}!normalize@{normalize}}
+\index{normalize@{normalize}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{normalize()}{normalize()}}
+{\footnotesize\ttfamily vec3 normalize (\begin{DoxyParamCaption}\item[{const vec3 \&}]{v }\end{DoxyParamCaption})}
+
+
+
+Normaliza um vetor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em v} & Vetor a ser normalizado. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Vetor normalizado. 
+\end{DoxyReturn}
+\Hypertarget{main_8cpp_a063bdee28d00237b469d3ba2f234fda6}\label{main_8cpp_a063bdee28d00237b469d3ba2f234fda6} 
+\index{main.cpp@{main.cpp}!ray\_color@{ray\_color}}
+\index{ray\_color@{ray\_color}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{ray\_color()}{ray\_color()}}
+{\footnotesize\ttfamily color ray\+\_\+color (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classray}{ray}} \&}]{r,  }\item[{std\+::string}]{type,  }\item[{std\+::vector$<$ Vertex $>$ \texorpdfstring{$\ast$}{*}}]{vertices = {\ttfamily nullptr},  }\item[{std\+::vector$<$ Face $>$ \texorpdfstring{$\ast$}{*}}]{faces = {\ttfamily nullptr} }\end{DoxyParamCaption})}
+
+
+
+Calcula a cor resultante de um raio. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em r} & Raio a ser traçado. \\
+\hline
+{\em type} & Tipo de objeto a ser verificado ("{}sphere"{}, "{}triangle"{}, "{}object"{}). \\
+\hline
+{\em vertices} & Ponteiro para o vetor de vértices (necessário para "{}object"{}). \\
+\hline
+{\em faces} & Ponteiro para o vetor de faces (necessário para "{}object"{}). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Cor resultante do raio. 
+\end{DoxyReturn}

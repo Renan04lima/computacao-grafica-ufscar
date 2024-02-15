@@ -1,0 +1,102 @@
+\doxysection{ray Class Reference}
+\hypertarget{classray}{}\label{classray}\index{ray@{ray}}
+
+
+Classe que representa um raio em um espaço tridimensional.  
+
+
+
+
+{\ttfamily \#include $<$ray.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classray_a6a81906c090ceff40ac9a288639f4861}\label{classray_a6a81906c090ceff40ac9a288639f4861} 
+{\bfseries ray} ()
+\begin{DoxyCompactList}\small\item\em Construtor padrão da classe ray. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classray_a7def5725591c1dda81936aa89c2003f4}{ray}} (const point3 \&\mbox{\hyperlink{classray_abc229e41909f1f0aa0290894d363408a}{origin}}, const vec3 \&\mbox{\hyperlink{classray_a28fa3264fc44eef1c968797f49aa8d7e}{direction}})
+\begin{DoxyCompactList}\small\item\em Construtor parametrizado que inicializa um raio com uma origem e uma direção. \end{DoxyCompactList}\item 
+point3 \mbox{\hyperlink{classray_abc229e41909f1f0aa0290894d363408a}{origin}} () const
+\begin{DoxyCompactList}\small\item\em Obtém a origem do raio. \end{DoxyCompactList}\item 
+vec3 \mbox{\hyperlink{classray_a28fa3264fc44eef1c968797f49aa8d7e}{direction}} () const
+\begin{DoxyCompactList}\small\item\em Obtém a direção do raio. \end{DoxyCompactList}\item 
+point3 \mbox{\hyperlink{classray_a9b41fb48d2e3bce032471a42a1cedc70}{at}} (double t) const
+\begin{DoxyCompactList}\small\item\em Calcula um ponto ao longo do raio a uma determinada distância. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Classe que representa um raio em um espaço tridimensional. 
+
+A classe ray é utilizada para representar um raio que possui uma origem (point3) e uma direção (vec3) no espaço tridimensional. Oferece métodos para acessar a origem, a direção e calcular um ponto em determinada distância ao longo do raio. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classray_a7def5725591c1dda81936aa89c2003f4}\label{classray_a7def5725591c1dda81936aa89c2003f4} 
+\index{ray@{ray}!ray@{ray}}
+\index{ray@{ray}!ray@{ray}}
+\doxysubsubsection{\texorpdfstring{ray()}{ray()}}
+{\footnotesize\ttfamily ray\+::ray (\begin{DoxyParamCaption}\item[{const point3 \&}]{origin,  }\item[{const vec3 \&}]{direction }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Construtor parametrizado que inicializa um raio com uma origem e uma direção. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em origin} & A origem do raio (point3). \\
+\hline
+{\em direction} & A direção do raio (vec3). \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classray_a9b41fb48d2e3bce032471a42a1cedc70}\label{classray_a9b41fb48d2e3bce032471a42a1cedc70} 
+\index{ray@{ray}!at@{at}}
+\index{at@{at}!ray@{ray}}
+\doxysubsubsection{\texorpdfstring{at()}{at()}}
+{\footnotesize\ttfamily point3 ray\+::at (\begin{DoxyParamCaption}\item[{double}]{t }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Calcula um ponto ao longo do raio a uma determinada distância. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em t} & A distância ao longo do raio. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+O ponto no espaço tridimensional correspondente à distância t ao longo do raio. 
+\end{DoxyReturn}
+\Hypertarget{classray_a28fa3264fc44eef1c968797f49aa8d7e}\label{classray_a28fa3264fc44eef1c968797f49aa8d7e} 
+\index{ray@{ray}!direction@{direction}}
+\index{direction@{direction}!ray@{ray}}
+\doxysubsubsection{\texorpdfstring{direction()}{direction()}}
+{\footnotesize\ttfamily vec3 ray\+::direction (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Obtém a direção do raio. 
+
+\begin{DoxyReturn}{Returns}
+A direção do raio (vec3). 
+\end{DoxyReturn}
+\Hypertarget{classray_abc229e41909f1f0aa0290894d363408a}\label{classray_abc229e41909f1f0aa0290894d363408a} 
+\index{ray@{ray}!origin@{origin}}
+\index{origin@{origin}!ray@{ray}}
+\doxysubsubsection{\texorpdfstring{origin()}{origin()}}
+{\footnotesize\ttfamily point3 ray\+::origin (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Obtém a origem do raio. 
+
+\begin{DoxyReturn}{Returns}
+A origem do raio (point3). 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/\+Users/renanoliveira/\+Desktop/ufscar/2023-\/02/computacao-\/grafica/atividades-\/projeto/\+Atividade04/includes/ray.\+h\end{DoxyCompactItemize}

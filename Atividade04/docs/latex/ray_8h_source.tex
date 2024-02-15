@@ -1,0 +1,31 @@
+\doxysection{ray.\+h}
+\hypertarget{ray_8h_source}{}\label{ray_8h_source}\index{/Users/renanoliveira/Desktop/ufscar/2023-\/02/computacao-\/grafica/atividades-\/projeto/Atividade04/includes/ray.h@{/Users/renanoliveira/Desktop/ufscar/2023-\/02/computacao-\/grafica/atividades-\/projeto/Atividade04/includes/ray.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ RAY\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ RAY\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}../../Atividade02/includes/vec3.h"{}}}
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00013\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classray}{ray}}\ \{}
+\DoxyCodeLine{00014\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00018\ \ \ \ \ \mbox{\hyperlink{classray_a6a81906c090ceff40ac9a288639f4861}{ray}}()\ \{\}}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00025\ \ \ \ \ \mbox{\hyperlink{classray_a7def5725591c1dda81936aa89c2003f4}{ray}}(\textcolor{keyword}{const}\ point3\ \&\mbox{\hyperlink{classray_abc229e41909f1f0aa0290894d363408a}{origin}},\ \textcolor{keyword}{const}\ vec3\ \&\mbox{\hyperlink{classray_a28fa3264fc44eef1c968797f49aa8d7e}{direction}})\ :\ orig(\mbox{\hyperlink{classray_abc229e41909f1f0aa0290894d363408a}{origin}}),\ dir(\mbox{\hyperlink{classray_a28fa3264fc44eef1c968797f49aa8d7e}{direction}})\ \{\}}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00031\ \ \ \ \ point3\ \mbox{\hyperlink{classray_abc229e41909f1f0aa0290894d363408a}{origin}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ orig;\ \}}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00037\ \ \ \ \ vec3\ \mbox{\hyperlink{classray_a28fa3264fc44eef1c968797f49aa8d7e}{direction}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ dir;\ \}}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00044\ \ \ \ \ point3\ \mbox{\hyperlink{classray_a9b41fb48d2e3bce032471a42a1cedc70}{at}}(\textcolor{keywordtype}{double}\ t)\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ orig\ +\ t\ *\ dir;}
+\DoxyCodeLine{00046\ \ \ \ \ \}}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00048\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00049\ \ \ \ \ point3\ orig;\ }
+\DoxyCodeLine{00050\ \ \ \ \ vec3\ dir;\ \ \ \ }
+\DoxyCodeLine{00051\ \};}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00053\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}
