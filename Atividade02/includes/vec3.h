@@ -3,6 +3,9 @@
 
 #include <cmath>
 #include <iostream>
+#include <limits>
+#include <memory>
+#include <random>
 
 using std::sqrt;
 
@@ -98,6 +101,24 @@ class vec3 {
      * @return The squared length of the vector.
      */
     double length_squared() const;
+
+    /**
+     * @brief Check if the vector is near zero.
+     * 
+     * @return true if the vector is near zero, false otherwise.
+     */
+    bool near_zero() const;
+
+    /**
+     * @brief Generate a random vector with components in the specified range.
+     * 
+     * @param min The minimum value for each component.
+     * @param max The maximum value for each component.
+     * @return A random vector with components in the specified range.
+     */
+    static vec3 random(double min, double max) {
+        return vec3(random_double(min, max), random_double(min, max), random_double(min, max));
+    }
 };
 
 // point3 is just an alias for vec3, but useful for geometric clarity in the code.

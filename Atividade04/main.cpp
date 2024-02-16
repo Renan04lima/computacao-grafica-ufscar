@@ -70,49 +70,6 @@ bool hit_triangle(const point3& vertex0, const point3& vertex1, const point3& ve
 }
 
 /**
- * @brief Normaliza um vetor.
- *
- * @param v Vetor a ser normalizado.
- * @return Vetor normalizado.
- */
-vec3 normalize(const vec3& v) {
-    double length = sqrt(v.x() * v.x() + v.y() * v.y() + v.z() * v.z());
-    return vec3(v.x() / length, v.y() / length, v.z() / length);
-}
-
-/**
- * @brief Verifica se um raio atinge um hexágono.
- *
- * @param center Centro do hexágono.
- * @param radius Raio do hexágono.
- * @param r Raio a ser verificado.
- * @return true se o raio atinge o hexágono, false caso contrário.
- */
-bool hit_hexagon(const point3& center, double radius, const ray& r) {
-    vec3 hexagon_normal(0, 0, 1);  // Assume que o hexágono está no plano XY
-
-    // Calcula a interseção do raio com o plano do hexágono
-    double t = dot(center - r.origin(), hexagon_normal) / dot(r.direction(), hexagon_normal);
-
-    // Verifica se a interseção ocorre na frente do observador e dentro do raio do hexágono
-    if (t < 0 || t > radius)
-        return false;
-
-    // Calcula o ponto de interseção no plano do hexágono
-    point3 intersection_point = r.at(t);
-
-    // Calcula as coordenadas polares no plano do hexágono
-    double angle = atan2(intersection_point.y() - center.y(), intersection_point.x() - center.x());
-    double distance_to_center = sqrt(pow(intersection_point.x() - center.x(), 2) + pow(intersection_point.y() - center.y(), 2));
-
-    // Verifica se o ponto de interseção está dentro do hexágono
-    if (distance_to_center <= radius && angle >= 0 && angle <= 2 * M_PI / 3)
-        return true;
-
-    return false;
-}
-
-/**
  * @brief Calcula a cor resultante de um raio.
  *
  * @param r Raio a ser traçado.
@@ -121,7 +78,7 @@ bool hit_hexagon(const point3& center, double radius, const ray& r) {
  * @param faces Ponteiro para o vetor de faces (necessário para "object").
  * @return Cor resultante do raio.
  */
-color ray_color(const ray &r, std::string type, std::vector<Vertex>* vertices = nullptr, std::vector<Face>* faces = nullptr) {
+color ray_color(const ray &r, std::string type, std::vector<Vertex>* vertices = nullptr, std::vector<std::vector<Face> >* faces = nullptr) {
     if (type == "sphere") {
         if (hit_sphere(point3(0, 0, -1), 0.5, r)) {
             return color(1, 0, 0);
@@ -135,38 +92,19 @@ color ray_color(const ray &r, std::string type, std::vector<Vertex>* vertices = 
             return color(1, 0, 0);
         }
     } else if (type == "object") {
-        if (!vertices || !faces) {
-            std::cerr << "Error: Vertices or faces are null." << std::endl;
-            return color(0, 0, 0);
-        }
+         for (size_t i = 0; i < faces->size(); i++) {
+            int indiceV0 = (*faces)[i][0].v1;
+            int indiceV1 = (*faces)[i][1].v1;
+            int indiceV2 = (*faces)[i][2].v1;
 
-        for (size_t i = 0; i < faces->size(); i++) {
-            int indiceV0 = (*faces)[i].v1 - 1;
-            int indiceV1 = (*faces)[i].v2 - 1;
-            int indiceV2 = (*faces)[i].v3 - 1;
+            point3 v0((*vertices)[indiceV0].x, (*vertices)[indiceV0].y, (*vertices)[indiceV0].z);
+            point3 v1((*vertices)[indiceV1].x, (*vertices)[indiceV1].y, (*vertices)[indiceV1].z);
+            point3 v2((*vertices)[indiceV2].x, (*vertices)[indiceV2].y, (*vertices)[indiceV2].z);
 
-            if (indiceV0 >= 0 && indiceV0 < vertices->size() &&
-                indiceV1 >= 0 && indiceV1 < vertices->size() &&
-                indiceV2 >= 0 && indiceV2 < vertices->size()) {
-                point3 v0((*vertices)[indiceV0].x, (*vertices)[indiceV0].y, (*vertices)[indiceV0].z);
-                point3 v1((*vertices)[indiceV1].x, (*vertices)[indiceV1].y, (*vertices)[indiceV1].z);
-                point3 v2((*vertices)[indiceV2].x, (*vertices)[indiceV2].y, (*vertices)[indiceV2].z);
-
-                // std::cout << "  Face " << i << ": " << v0 << " " << v1 << " " << v2 << std::endl;
-
-                point3 center_of_hexagon(0.0, 0.0, 0.0);  // Defina o centro do hexágono conforme necessário
-                double hexagon_radius = 1.0;  // Defina o raio do hexágono conforme necessário
-
-                if (hit_hexagon(center_of_hexagon, hexagon_radius, r)) {
-                    return color(1, 0, 0);
-                }
-            } else {
-                std::cerr << "Error: Invalid vertex index in face " << i << "." << std::endl;
+            if (hit_triangle(v0, v1, v2, r)) {
+                return color(1, 0, 0);
             }
         }
-
-        // Retorne uma cor padrão se nenhum triângulo for atingido
-        return color(0, 0, 0);
     }
 
     vec3 unit_direction = unit_vector(r.direction());
@@ -258,9 +196,8 @@ int main() {
 
     ObjLoader objLoader;
     objLoader.LoadObj("/Users/renanoliveira/Desktop/ufscar/2023-02/computacao-grafica/atividades-projeto/Atividade04/hexagon.obj");
-
-    std::vector<Vertex> vertices = objLoader.GetVertices();
-    std::vector<Face> faces = objLoader.GetFaces();
+    std::vector<Vertex> vertices = objLoader.vertices;
+    std::vector<std::vector<Face> > faces = objLoader.faces;
 
     for (int j = 0; j < image_height; ++j) {
         for (int i = 0; i < image_width; ++i) {

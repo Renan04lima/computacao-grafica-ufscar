@@ -12,6 +12,9 @@
 #include <vector>
 #include <string>
 
+#include "../../Atividade05/includes/triangle.h"
+#include "../../Atividade05/includes/material.h"
+
 struct Vertex {
     float x, y, z;
 };
@@ -33,11 +36,16 @@ struct Face {
  */
 class ObjLoader {
 public:
+    std::vector<Vertex> vertices;
+    std::vector<TextureCoord> textureCoords;
+    std::vector<Normal> normals;
+    std::vector<std::vector<Face> > faces;
+
     /**
      * @brief Obtém os vértices carregados.
      * @return Vetor de vértices.
      */
-    std::vector<Vertex> GetVertices() const;
+    Vertex GetVertices(const int idx) const;
 
     /**
      * @brief Obtém as coordenadas de textura carregadas.
@@ -49,13 +57,13 @@ public:
      * @brief Obtém as normais carregadas.
      * @return Vetor de normais.
      */
-    std::vector<Normal> GetNormals() const;
+    Normal GetNormals(const int idx) const;
 
     /**
      * @brief Obtém as faces carregadas.
      * @return Vetor de faces.
      */
-    std::vector<Face> GetFaces() const;
+    Face GetFaces(const int i, const int j) const;
 
     /**
      * @brief Carrega um arquivo OBJ.
@@ -63,11 +71,7 @@ public:
      */
     void LoadObj(const std::string& filename);
 
-private:
-    std::vector<Vertex> vertices;
-    std::vector<TextureCoord> textureCoords;
-    std::vector<Normal> normals;
-    std::vector<Face> faces;
+    std::vector<triangle> get_triangle_faces(shared_ptr<material> mat);
 };
 
 #endif 

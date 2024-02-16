@@ -21,6 +21,13 @@ vec3::vec3(double e0, double e1, double e2) {
     e[1] = e1;
     e[2] = e2;
 }
+/**
+ * @brief Verifica se o vetor é próximo de zero em todos os componentes
+ */
+bool vec3::near_zero() const {
+    const auto s = 1e-8;
+    return (fabs( e[0]) < s) && (fabs(e[1]) < s) && (fabs(e[2]) < s);
+}
 
 /**
  * @brief Getter for the x component of the vector.
