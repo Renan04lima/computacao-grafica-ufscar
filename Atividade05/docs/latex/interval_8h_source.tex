@@ -1,0 +1,46 @@
+\doxysection{interval.\+h}
+\hypertarget{interval_8h_source}{}\label{interval_8h_source}\index{/Users/renanoliveira/Desktop/ufscar/2023-\/02/computacao-\/grafica/atividades-\/projeto/Atividade05/includes/interval.h@{/Users/renanoliveira/Desktop/ufscar/2023-\/02/computacao-\/grafica/atividades-\/projeto/Atividade05/includes/interval.h}}
+\mbox{\hyperlink{interval_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#ifndef\ INTERVAL\_H}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#define\ INTERVAL\_H}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00016\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classinterval}{interval}}\ \{}
+\DoxyCodeLine{00017\ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00018\ \ \ \ \ \textcolor{keywordtype}{double}\ min,\ \mbox{\hyperlink{classinterval_a02eac6f97ae4212f8b2bbeea12f4874e}{max}};\ }
+\DoxyCodeLine{00023\ \ \ \ \ \mbox{\hyperlink{classinterval_acbedd1641f77c0c8007c75ff3f10bb11}{interval}}()\ :\ min(+infinity),\ \mbox{\hyperlink{classinterval_a02eac6f97ae4212f8b2bbeea12f4874e}{max}}(-\/infinity)\ \{\}\ \textcolor{comment}{//\ O\ intervalo\ padrão\ é\ vazio}}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00031\ \ \ \ \ \mbox{\hyperlink{classinterval_ac7cd712129b0217cd8a466ccb6e03f6d}{interval}}(\textcolor{keywordtype}{double}\ \_min,\ \textcolor{keywordtype}{double}\ \_max)\ :\ min(\_min),\ \mbox{\hyperlink{classinterval_a02eac6f97ae4212f8b2bbeea12f4874e}{max}}(\_max)\ \{\}}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00038\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classinterval_a3ba8dfeca0730838afd8017cb97d5938}{size}}()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classinterval_a02eac6f97ae4212f8b2bbeea12f4874e}{max}}\ -\/\ min;}
+\DoxyCodeLine{00040\ \ \ \ \ \}}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00048\ \ \ \ \ \mbox{\hyperlink{classinterval}{interval}}\ \mbox{\hyperlink{classinterval_ac72e2f16a05411b0369f61cc1121676c}{expand}}(\textcolor{keywordtype}{double}\ delta)\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ padding\ =\ delta/2;}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classinterval_acbedd1641f77c0c8007c75ff3f10bb11}{interval}}(min\ -\/\ padding,\ \mbox{\hyperlink{classinterval_a02eac6f97ae4212f8b2bbeea12f4874e}{max}}\ +\ padding);}
+\DoxyCodeLine{00051\ \ \ \ \ \}}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00060\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classinterval_aa981e5b35d830ef5525c479e9724250a}{contains}}(\textcolor{keywordtype}{double}\ x)\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ min\ <=\ x\ \&\&\ x\ <=\ \mbox{\hyperlink{classinterval_a02eac6f97ae4212f8b2bbeea12f4874e}{max}};}
+\DoxyCodeLine{00062\ \ \ \ \ \}}
+\DoxyCodeLine{00063\ }
+\DoxyCodeLine{00071\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classinterval_a2b78c560ddb82a10ba138471a631cbcc}{surrounds}}(\textcolor{keywordtype}{double}\ x)\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ min\ <\ x\ \&\&\ x\ <\ \mbox{\hyperlink{classinterval_a02eac6f97ae4212f8b2bbeea12f4874e}{max}};}
+\DoxyCodeLine{00073\ \ \ \ \ \}}
+\DoxyCodeLine{00074\ }
+\DoxyCodeLine{00081\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classinterval_add5a3a1a969cf4b7a11ccc33dd861042}{clamp}}(\textcolor{keywordtype}{double}\ x)\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (x\ <\ min)\ \textcolor{keywordflow}{return}\ min;}
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (x\ >\ \mbox{\hyperlink{classinterval_a02eac6f97ae4212f8b2bbeea12f4874e}{max}})\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classinterval_a02eac6f97ae4212f8b2bbeea12f4874e}{max}};}
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ x;}
+\DoxyCodeLine{00085\ \ \ \ \ \}}
+\DoxyCodeLine{00086\ }
+\DoxyCodeLine{00087\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classinterval}{interval}}\ \mbox{\hyperlink{classinterval_a6e23ba90dce932166d37f871b5ffc3e4}{empty}},\ \mbox{\hyperlink{classinterval_ade23700267da88e2d1a5b470aff38de6}{universe}};\ }
+\DoxyCodeLine{00088\ \};}
+\DoxyCodeLine{00089\ }
+\DoxyCodeLine{00090\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classinterval}{interval}}\ \mbox{\hyperlink{classinterval_a6e23ba90dce932166d37f871b5ffc3e4}{interval::empty}}\ \ \ \ =\ \mbox{\hyperlink{classinterval}{interval}}(+infinity,\ -\/infinity);\ }
+\DoxyCodeLine{00091\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classinterval}{interval}}\ \mbox{\hyperlink{classinterval_ade23700267da88e2d1a5b470aff38de6}{interval::universe}}\ =\ \mbox{\hyperlink{classinterval}{interval}}(-\/infinity,\ +infinity);\ }
+\DoxyCodeLine{00093\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

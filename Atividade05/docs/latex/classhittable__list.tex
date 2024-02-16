@@ -1,0 +1,120 @@
+\doxysection{hittable\+\_\+list Class Reference}
+\hypertarget{classhittable__list}{}\label{classhittable__list}\index{hittable\_list@{hittable\_list}}
+
+
+Classe que representa uma lista de objetos interceptáveis em uma cena.  
+
+
+
+
+{\ttfamily \#include $<$hittable\+\_\+list.\+h$>$}
+
+Inheritance diagram for hittable\+\_\+list\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classhittable__list}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classhittable__list_ab5677053409dc9db3807eb0fd91c84ab}\label{classhittable__list_ab5677053409dc9db3807eb0fd91c84ab} 
+{\bfseries hittable\+\_\+list} ()
+\begin{DoxyCompactList}\small\item\em Construtor padrão. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classhittable__list_a7e0ca4e0c4500a469ca5aee065583c8a}{hittable\+\_\+list}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classhittable}{hittable}} $>$ object)
+\begin{DoxyCompactList}\small\item\em Construtor que adiciona um objeto à lista. \end{DoxyCompactList}\item 
+\Hypertarget{classhittable__list_a74cf8b7ee9846ac7bbbb634863e253f6}\label{classhittable__list_a74cf8b7ee9846ac7bbbb634863e253f6} 
+void {\bfseries clear} ()
+\begin{DoxyCompactList}\small\item\em Elimina todos os objetos interceptáveis armazenados na lista. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classhittable__list_a6f51233df1bf18c6665a9ec36e475f39}{add}} (shared\+\_\+ptr$<$ \mbox{\hyperlink{classhittable}{hittable}} $>$ object)
+\begin{DoxyCompactList}\small\item\em Adiciona um novo objeto à lista de objetos interceptáveis da cena. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classhittable__list_a5dc9ff5d458452db88134751ff1c4ea4}{hit}} (const ray \&r, \mbox{\hyperlink{classinterval}{interval}} ray\+\_\+t, \mbox{\hyperlink{classhit__record}{hit\+\_\+record}} \&rec) const noexcept override
+\begin{DoxyCompactList}\small\item\em Função que verifica se algum dos objetos intercepta algo na cena. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::vector$<$ shared\+\_\+ptr$<$ \mbox{\hyperlink{classhittable}{hittable}} $>$ $>$ \mbox{\hyperlink{classhittable__list_a4de3045519f5de1f5d20e53c52b916be}{objects}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Classe que representa uma lista de objetos interceptáveis em uma cena. 
+
+Esta classe herda de hittable e contém uma lista de objetos que podem ser interceptados por raios. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classhittable__list_a7e0ca4e0c4500a469ca5aee065583c8a}\label{classhittable__list_a7e0ca4e0c4500a469ca5aee065583c8a} 
+\index{hittable\_list@{hittable\_list}!hittable\_list@{hittable\_list}}
+\index{hittable\_list@{hittable\_list}!hittable\_list@{hittable\_list}}
+\doxysubsubsection{\texorpdfstring{hittable\_list()}{hittable\_list()}}
+{\footnotesize\ttfamily hittable\+\_\+list\+::hittable\+\_\+list (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classhittable}{hittable}} $>$}]{object }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Construtor que adiciona um objeto à lista. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em object} & Objeto a ser adicionado à lista. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classhittable__list_a6f51233df1bf18c6665a9ec36e475f39}\label{classhittable__list_a6f51233df1bf18c6665a9ec36e475f39} 
+\index{hittable\_list@{hittable\_list}!add@{add}}
+\index{add@{add}!hittable\_list@{hittable\_list}}
+\doxysubsubsection{\texorpdfstring{add()}{add()}}
+{\footnotesize\ttfamily void hittable\+\_\+list\+::add (\begin{DoxyParamCaption}\item[{shared\+\_\+ptr$<$ \mbox{\hyperlink{classhittable}{hittable}} $>$}]{object }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Adiciona um novo objeto à lista de objetos interceptáveis da cena. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em object} & Objeto a ser adicionado à lista. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classhittable__list_a5dc9ff5d458452db88134751ff1c4ea4}\label{classhittable__list_a5dc9ff5d458452db88134751ff1c4ea4} 
+\index{hittable\_list@{hittable\_list}!hit@{hit}}
+\index{hit@{hit}!hittable\_list@{hittable\_list}}
+\doxysubsubsection{\texorpdfstring{hit()}{hit()}}
+{\footnotesize\ttfamily bool hittable\+\_\+list\+::hit (\begin{DoxyParamCaption}\item[{const ray \&}]{r,  }\item[{\mbox{\hyperlink{classinterval}{interval}}}]{ray\+\_\+t,  }\item[{\mbox{\hyperlink{classhit__record}{hit\+\_\+record}} \&}]{rec }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}, {\ttfamily [noexcept]}}
+
+
+
+Função que verifica se algum dos objetos intercepta algo na cena. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em r} & Raio a ser verificado. \\
+\hline
+{\em ray\+\_\+t} & Dados auxiliares de intervalo do raio. \\
+\hline
+{\em rec} & Estrutura para armazenamento de interceptações. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true Se algum objeto intercepta o raio. 
+
+false Se nenhum objeto intercepta o raio. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classhittable_ad74f3720b6de850be47b14a9e21e1c01}{hittable}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classhittable__list_a4de3045519f5de1f5d20e53c52b916be}\label{classhittable__list_a4de3045519f5de1f5d20e53c52b916be} 
+\index{hittable\_list@{hittable\_list}!objects@{objects}}
+\index{objects@{objects}!hittable\_list@{hittable\_list}}
+\doxysubsubsection{\texorpdfstring{objects}{objects}}
+{\footnotesize\ttfamily std\+::vector$<$shared\+\_\+ptr$<$\mbox{\hyperlink{classhittable}{hittable}}$>$ $>$ hittable\+\_\+list\+::objects}
+
+Lista de objetos interceptáveis 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/\+Users/renanoliveira/\+Desktop/ufscar/2023-\/02/computacao-\/grafica/atividades-\/projeto/\+Atividade05/includes/\mbox{\hyperlink{hittable__list_8h}{hittable\+\_\+list.\+h}}\end{DoxyCompactItemize}

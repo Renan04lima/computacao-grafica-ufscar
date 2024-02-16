@@ -1,0 +1,52 @@
+\doxysection{sphere.\+h}
+\hypertarget{sphere_8h_source}{}\label{sphere_8h_source}\index{/Users/renanoliveira/Desktop/ufscar/2023-\/02/computacao-\/grafica/atividades-\/projeto/Atividade05/includes/sphere.h@{/Users/renanoliveira/Desktop/ufscar/2023-\/02/computacao-\/grafica/atividades-\/projeto/Atividade05/includes/sphere.h}}
+\mbox{\hyperlink{sphere_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#ifndef\ SPHERE\_H}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#define\ SPHERE\_H}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{utils_8h}{utils.h}}"{}}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{hittable_8h}{hittable.h}}"{}}}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00017\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classsphere}{sphere}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classhittable}{hittable}}\ \{}
+\DoxyCodeLine{00018\ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00026\ \ \ \ \ \mbox{\hyperlink{classsphere_afb5f0ae0d487c21a08c4741bc736664c}{sphere}}(point3\ \_center,\ \textcolor{keywordtype}{double}\ \_radius,\ shared\_ptr<material>\ \_material)}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ :\ center(\_center),\ radius(\_radius),\ mat(\_material)\ \{\}}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00038\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classsphere_acc88982099b254c9aec308ce4812bd3d}{hit}}(\textcolor{keyword}{const}\ ray\&\ r,\ \mbox{\hyperlink{classinterval}{interval}}\ ray\_t,\ \mbox{\hyperlink{classhit__record}{hit\_record}}\&\ rec)\ \textcolor{keyword}{const}\ \textcolor{keyword}{noexcept}\ \textcolor{keyword}{override}\ \{}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ vec3\ oc\ =\ r.origin()\ -\/\ center;}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ a\ =\ r.direction().length\_squared();}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ half\_b\ =\ dot(oc,\ r.direction());}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ c\ =\ oc.length\_squared()\ -\/\ radius*radius;}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ discriminant\ =\ half\_b*half\_b\ -\/\ a*c;}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (discriminant\ <\ 0)}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ sqrtd\ =\ sqrt(discriminant);}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ root\ =\ (-\/half\_b\ -\/\ sqrtd)\ /\ a;}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!ray\_t.surrounds(root))\ \{}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \ \ \ \ root\ =\ (-\/half\_b\ +\ sqrtd)\ /\ a;}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!ray\_t.surrounds(root))}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ rec.t\ =\ root;}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ rec.p\ =\ r.at(rec.t);}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ vec3\ outward\_normal\ =\ (rec.p\ -\/\ center)\ /\ radius;}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ rec.set\_face\_normal(r,\ outward\_normal);}
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ rec.mat\ =\ mat;}
+\DoxyCodeLine{00061\ }
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00063\ \ \ \ \ \}}
+\DoxyCodeLine{00064\ }
+\DoxyCodeLine{00065\ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00066\ \ \ \ \ point3\ center;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00067\ \ \ \ \ \textcolor{keywordtype}{double}\ radius;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00068\ \ \ \ \ shared\_ptr<material>\ mat;\ \ \ \ \ \ }
+\DoxyCodeLine{00069\ \};}
+\DoxyCodeLine{00070\ }
+\DoxyCodeLine{00071\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

@@ -1,0 +1,68 @@
+\doxysection{/\+Users/renanoliveira/\+Desktop/ufscar/2023-\/02/computacao-\/grafica/atividades-\/projeto/\+Atividade05/includes/color.h File Reference}
+\hypertarget{color_8h}{}\label{color_8h}\index{/Users/renanoliveira/Desktop/ufscar/2023-\/02/computacao-\/grafica/atividades-\/projeto/Atividade05/includes/color.h@{/Users/renanoliveira/Desktop/ufscar/2023-\/02/computacao-\/grafica/atividades-\/projeto/Atividade05/includes/color.h}}
+
+
+Arquivo de implementação da classe Color.  
+
+
+{\ttfamily \#include "{}../../\+Atividade02/includes/vec3.\+h"{}}\newline
+{\ttfamily \#include "{}../../\+Atividade02/includes/vec3.\+cpp"{}}\newline
+{\ttfamily \#include $<$iostream$>$}\newline
+\doxysubsubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{color_8h_a54655a19ac6428ab22c6f2d7ec0413c4}\label{color_8h_a54655a19ac6428ab22c6f2d7ec0413c4} 
+using {\bfseries color} = vec3
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+double \mbox{\hyperlink{color_8h_ab2c8477141a3862843ff8c5888bca24a}{linear\+\_\+to\+\_\+gamma}} (double linear\+\_\+component)
+\begin{DoxyCompactList}\small\item\em Função para transformar um componente linear para o espaço gamma. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{color_8h_a62f074b695c0d70726abedabf84d9c79}{write\+\_\+color}} (std\+::ostream \&out, color pixel\+\_\+color, int samples\+\_\+per\+\_\+pixel)
+\begin{DoxyCompactList}\small\item\em Escreve a cor de um pixel em um formato de imagem (PPM). \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Arquivo de implementação da classe Color. 
+
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{color_8h_ab2c8477141a3862843ff8c5888bca24a}\label{color_8h_ab2c8477141a3862843ff8c5888bca24a} 
+\index{color.h@{color.h}!linear\_to\_gamma@{linear\_to\_gamma}}
+\index{linear\_to\_gamma@{linear\_to\_gamma}!color.h@{color.h}}
+\doxysubsubsection{\texorpdfstring{linear\_to\_gamma()}{linear\_to\_gamma()}}
+{\footnotesize\ttfamily double linear\+\_\+to\+\_\+gamma (\begin{DoxyParamCaption}\item[{double}]{linear\+\_\+component }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Função para transformar um componente linear para o espaço gamma. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em linear\+\_\+component} & Componente linear a ser transformado. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+double Componente transformado no espaço gamma. 
+\end{DoxyReturn}
+\Hypertarget{color_8h_a62f074b695c0d70726abedabf84d9c79}\label{color_8h_a62f074b695c0d70726abedabf84d9c79} 
+\index{color.h@{color.h}!write\_color@{write\_color}}
+\index{write\_color@{write\_color}!color.h@{color.h}}
+\doxysubsubsection{\texorpdfstring{write\_color()}{write\_color()}}
+{\footnotesize\ttfamily void write\+\_\+color (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{out,  }\item[{color}]{pixel\+\_\+color,  }\item[{int}]{samples\+\_\+per\+\_\+pixel }\end{DoxyParamCaption})}
+
+
+
+Escreve a cor de um pixel em um formato de imagem (PPM). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em out} & Saída para o arquivo PPM. \\
+\hline
+{\em pixel\+\_\+color} & Vetor de cor representando a cor do pixel. \\
+\hline
+{\em samples\+\_\+per\+\_\+pixel} & Número de amostras por pixel na imagem. \\
+\hline
+\end{DoxyParams}

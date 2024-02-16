@@ -1,0 +1,127 @@
+\doxysection{triangle Class Reference}
+\hypertarget{classtriangle}{}\label{classtriangle}\index{triangle@{triangle}}
+
+
+Classe que representa um triângulo na cena.  
+
+
+
+
+{\ttfamily \#include $<$triangle.\+h$>$}
+
+Inheritance diagram for triangle\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classtriangle}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classtriangle_ad2fc21b9b1eff7a424c4dd610784e572}{triangle}} (const \mbox{\hyperlink{classvertex}{vertex}} \&\+\_\+A, const \mbox{\hyperlink{classvertex}{vertex}} \&\+\_\+B, const \mbox{\hyperlink{classvertex}{vertex}} \&\+\_\+C, shared\+\_\+ptr$<$ \mbox{\hyperlink{classmaterial}{material}} $>$ \+\_\+material)
+\begin{DoxyCompactList}\small\item\em Construtor da classe Triangle. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classtriangle_ae46da887f152b979a456c7c890036757}{hit}} (const ray \&r, \mbox{\hyperlink{classinterval}{interval}} ray\+\_\+t, \mbox{\hyperlink{classhit__record}{hit\+\_\+record}} \&rec) const noexcept override
+\begin{DoxyCompactList}\small\item\em Verifica a interseção entre um raio e o triângulo. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classvertex}{vertex}} \mbox{\hyperlink{classtriangle_a630a9e387667f678007616bbe1e280f2}{A}}
+\item 
+\mbox{\hyperlink{classvertex}{vertex}} \mbox{\hyperlink{classtriangle_aa275ad16451251efae3cfacfd0b3ce2c}{B}}
+\item 
+\mbox{\hyperlink{classvertex}{vertex}} \mbox{\hyperlink{classtriangle_af1521997f602f04b9f5a15e729a673ae}{C}}
+\item 
+shared\+\_\+ptr$<$ \mbox{\hyperlink{classmaterial}{material}} $>$ \mbox{\hyperlink{classtriangle_a070d478a241602ac8ba67082b12ec05c}{mat}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Classe que representa um triângulo na cena. 
+
+A classe {\ttfamily triangle} herda da classe {\ttfamily hittable} e implementa a interseção de um raio com um triângulo definido por três vértices. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classtriangle_ad2fc21b9b1eff7a424c4dd610784e572}\label{classtriangle_ad2fc21b9b1eff7a424c4dd610784e572} 
+\index{triangle@{triangle}!triangle@{triangle}}
+\index{triangle@{triangle}!triangle@{triangle}}
+\doxysubsubsection{\texorpdfstring{triangle()}{triangle()}}
+{\footnotesize\ttfamily triangle\+::triangle (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classvertex}{vertex}} \&}]{\+\_\+A,  }\item[{const \mbox{\hyperlink{classvertex}{vertex}} \&}]{\+\_\+B,  }\item[{const \mbox{\hyperlink{classvertex}{vertex}} \&}]{\+\_\+C,  }\item[{shared\+\_\+ptr$<$ \mbox{\hyperlink{classmaterial}{material}} $>$}]{\+\_\+material }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Construtor da classe Triangle. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+A} & Vértice A do triângulo. \\
+\hline
+{\em \+\_\+B} & Vértice B do triângulo. \\
+\hline
+{\em \+\_\+C} & Vértice C do triângulo. \\
+\hline
+{\em \+\_\+material} & Material do triângulo. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classtriangle_ae46da887f152b979a456c7c890036757}\label{classtriangle_ae46da887f152b979a456c7c890036757} 
+\index{triangle@{triangle}!hit@{hit}}
+\index{hit@{hit}!triangle@{triangle}}
+\doxysubsubsection{\texorpdfstring{hit()}{hit()}}
+{\footnotesize\ttfamily bool triangle\+::hit (\begin{DoxyParamCaption}\item[{const ray \&}]{r,  }\item[{\mbox{\hyperlink{classinterval}{interval}}}]{ray\+\_\+t,  }\item[{\mbox{\hyperlink{classhit__record}{hit\+\_\+record}} \&}]{rec }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}, {\ttfamily [noexcept]}}
+
+
+
+Verifica a interseção entre um raio e o triângulo. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em r} & Raio a ser verificado. \\
+\hline
+{\em ray\+\_\+t} & Dados auxiliares de intervalo do raio. \\
+\hline
+{\em rec} & Registro de interseptação. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true Se houver interseção. 
+
+false Se não houver interseção. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classhittable_ad74f3720b6de850be47b14a9e21e1c01}{hittable}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classtriangle_a630a9e387667f678007616bbe1e280f2}\label{classtriangle_a630a9e387667f678007616bbe1e280f2} 
+\index{triangle@{triangle}!A@{A}}
+\index{A@{A}!triangle@{triangle}}
+\doxysubsubsection{\texorpdfstring{A}{A}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classvertex}{vertex}} triangle\+::A}
+
+Vértice A do triângulo. \Hypertarget{classtriangle_aa275ad16451251efae3cfacfd0b3ce2c}\label{classtriangle_aa275ad16451251efae3cfacfd0b3ce2c} 
+\index{triangle@{triangle}!B@{B}}
+\index{B@{B}!triangle@{triangle}}
+\doxysubsubsection{\texorpdfstring{B}{B}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classvertex}{vertex}} triangle\+::B}
+
+Vértice B do triângulo. \Hypertarget{classtriangle_af1521997f602f04b9f5a15e729a673ae}\label{classtriangle_af1521997f602f04b9f5a15e729a673ae} 
+\index{triangle@{triangle}!C@{C}}
+\index{C@{C}!triangle@{triangle}}
+\doxysubsubsection{\texorpdfstring{C}{C}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classvertex}{vertex}} triangle\+::C}
+
+Vértice C do triângulo. \Hypertarget{classtriangle_a070d478a241602ac8ba67082b12ec05c}\label{classtriangle_a070d478a241602ac8ba67082b12ec05c} 
+\index{triangle@{triangle}!mat@{mat}}
+\index{mat@{mat}!triangle@{triangle}}
+\doxysubsubsection{\texorpdfstring{mat}{mat}}
+{\footnotesize\ttfamily shared\+\_\+ptr$<$\mbox{\hyperlink{classmaterial}{material}}$>$ triangle\+::mat}
+
+Material do triângulo. 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/\+Users/renanoliveira/\+Desktop/ufscar/2023-\/02/computacao-\/grafica/atividades-\/projeto/\+Atividade05/includes/\mbox{\hyperlink{triangle_8h}{triangle.\+h}}\end{DoxyCompactItemize}

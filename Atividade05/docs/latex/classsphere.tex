@@ -1,0 +1,87 @@
+\doxysection{sphere Class Reference}
+\hypertarget{classsphere}{}\label{classsphere}\index{sphere@{sphere}}
+
+
+Representação de uma esfera no espaço tridimensional.  
+
+
+
+
+{\ttfamily \#include $<$sphere.\+h$>$}
+
+Inheritance diagram for sphere\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classsphere}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classsphere_afb5f0ae0d487c21a08c4741bc736664c}{sphere}} (point3 \+\_\+center, double \+\_\+radius, shared\+\_\+ptr$<$ \mbox{\hyperlink{classmaterial}{material}} $>$ \+\_\+material)
+\begin{DoxyCompactList}\small\item\em Construtor da classe Sphere. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classsphere_acc88982099b254c9aec308ce4812bd3d}{hit}} (const ray \&r, \mbox{\hyperlink{classinterval}{interval}} ray\+\_\+t, \mbox{\hyperlink{classhit__record}{hit\+\_\+record}} \&rec) const noexcept override
+\begin{DoxyCompactList}\small\item\em Verifica se um raio atinge a esfera e retorna informações sobre a interseção. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Representação de uma esfera no espaço tridimensional. 
+
+A classe {\ttfamily sphere} herda da classe {\ttfamily hittable} e implementa a interseção de raios com uma esfera. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classsphere_afb5f0ae0d487c21a08c4741bc736664c}\label{classsphere_afb5f0ae0d487c21a08c4741bc736664c} 
+\index{sphere@{sphere}!sphere@{sphere}}
+\index{sphere@{sphere}!sphere@{sphere}}
+\doxysubsubsection{\texorpdfstring{sphere()}{sphere()}}
+{\footnotesize\ttfamily sphere\+::sphere (\begin{DoxyParamCaption}\item[{point3}]{\+\_\+center,  }\item[{double}]{\+\_\+radius,  }\item[{shared\+\_\+ptr$<$ \mbox{\hyperlink{classmaterial}{material}} $>$}]{\+\_\+material }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Construtor da classe Sphere. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+center} & Centro da esfera. \\
+\hline
+{\em \+\_\+radius} & Raio da esfera. \\
+\hline
+{\em \+\_\+material} & Material associado à esfera. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classsphere_acc88982099b254c9aec308ce4812bd3d}\label{classsphere_acc88982099b254c9aec308ce4812bd3d} 
+\index{sphere@{sphere}!hit@{hit}}
+\index{hit@{hit}!sphere@{sphere}}
+\doxysubsubsection{\texorpdfstring{hit()}{hit()}}
+{\footnotesize\ttfamily bool sphere\+::hit (\begin{DoxyParamCaption}\item[{const ray \&}]{r,  }\item[{\mbox{\hyperlink{classinterval}{interval}}}]{ray\+\_\+t,  }\item[{\mbox{\hyperlink{classhit__record}{hit\+\_\+record}} \&}]{rec }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}, {\ttfamily [noexcept]}}
+
+
+
+Verifica se um raio atinge a esfera e retorna informações sobre a interseção. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em r} & Raio a ser verificado. \\
+\hline
+{\em ray\+\_\+t} & Dados auxiliares de intervalo do raio. \\
+\hline
+{\em rec} & Estrutura para armazenamento de informações sobre a interseção. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true Se houve interseção entre o raio e a esfera. 
+
+false Se não houve interseção entre o raio e a esfera. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classhittable_ad74f3720b6de850be47b14a9e21e1c01}{hittable}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/\+Users/renanoliveira/\+Desktop/ufscar/2023-\/02/computacao-\/grafica/atividades-\/projeto/\+Atividade05/includes/\mbox{\hyperlink{sphere_8h}{sphere.\+h}}\end{DoxyCompactItemize}

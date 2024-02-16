@@ -1,0 +1,63 @@
+\doxysection{hittable Class Reference}
+\hypertarget{classhittable}{}\label{classhittable}\index{hittable@{hittable}}
+
+
+Classe base abstrata que representa um objeto interceptável por raios.  
+
+
+
+
+{\ttfamily \#include $<$hittable.\+h$>$}
+
+Inheritance diagram for hittable\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classhittable}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual bool \mbox{\hyperlink{classhittable_ad74f3720b6de850be47b14a9e21e1c01}{hit}} (const ray \&r, \mbox{\hyperlink{classinterval}{interval}} ray\+\_\+t, \mbox{\hyperlink{classhit__record}{hit\+\_\+record}} \&rec) const =0
+\begin{DoxyCompactList}\small\item\em Método virtual puro para determinar a interseção entre um raio e o objeto. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Classe base abstrata que representa um objeto interceptável por raios. 
+
+A classe Hittable define uma interface para objetos que podem ser atingidos por raios. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classhittable_ad74f3720b6de850be47b14a9e21e1c01}\label{classhittable_ad74f3720b6de850be47b14a9e21e1c01} 
+\index{hittable@{hittable}!hit@{hit}}
+\index{hit@{hit}!hittable@{hittable}}
+\doxysubsubsection{\texorpdfstring{hit()}{hit()}}
+{\footnotesize\ttfamily virtual bool hittable\+::hit (\begin{DoxyParamCaption}\item[{const ray \&}]{r,  }\item[{\mbox{\hyperlink{classinterval}{interval}}}]{ray\+\_\+t,  }\item[{\mbox{\hyperlink{classhit__record}{hit\+\_\+record}} \&}]{rec }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Método virtual puro para determinar a interseção entre um raio e o objeto. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em r} & Raio a ser verificado quanto à interseção. \\
+\hline
+{\em ray\+\_\+t} & Dados auxiliares de intervalo do raio. \\
+\hline
+{\em rec} & Registro para armazenar informações sobre a interseção. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true Se houve uma interseção. 
+
+false Se não houve interseção. 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{classhittable__list_a5dc9ff5d458452db88134751ff1c4ea4}{hittable\+\_\+list}}, \mbox{\hyperlink{classsphere_acc88982099b254c9aec308ce4812bd3d}{sphere}}, and \mbox{\hyperlink{classtriangle_ae46da887f152b979a456c7c890036757}{triangle}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/\+Users/renanoliveira/\+Desktop/ufscar/2023-\/02/computacao-\/grafica/atividades-\/projeto/\+Atividade05/includes/\mbox{\hyperlink{hittable_8h}{hittable.\+h}}\end{DoxyCompactItemize}

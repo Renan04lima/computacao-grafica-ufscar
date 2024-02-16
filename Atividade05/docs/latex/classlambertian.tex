@@ -1,0 +1,81 @@
+\doxysection{lambertian Class Reference}
+\hypertarget{classlambertian}{}\label{classlambertian}\index{lambertian@{lambertian}}
+
+
+Classe que representa um material difuso (lambertiano).  
+
+
+
+
+{\ttfamily \#include $<$material.\+h$>$}
+
+Inheritance diagram for lambertian\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classlambertian}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classlambertian_af8e58b324776397a6598b2ec85a0b887}{lambertian}} (const color \&a)
+\begin{DoxyCompactList}\small\item\em Construtor da classe lambertian. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classlambertian_addbce7ba60f1ff30067ee9de362b12a7}{scatter}} (const ray \&r\+\_\+in, const \mbox{\hyperlink{classhit__record}{hit\+\_\+record}} \&rec, color \&attenuation, ray \&scattered) const override
+\begin{DoxyCompactList}\small\item\em Implementação da função de espalhamento para material difuso. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Classe que representa um material difuso (lambertiano). 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classlambertian_af8e58b324776397a6598b2ec85a0b887}\label{classlambertian_af8e58b324776397a6598b2ec85a0b887} 
+\index{lambertian@{lambertian}!lambertian@{lambertian}}
+\index{lambertian@{lambertian}!lambertian@{lambertian}}
+\doxysubsubsection{\texorpdfstring{lambertian()}{lambertian()}}
+{\footnotesize\ttfamily lambertian\+::lambertian (\begin{DoxyParamCaption}\item[{const color \&}]{a }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Construtor da classe lambertian. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em a} & Cor do material. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classlambertian_addbce7ba60f1ff30067ee9de362b12a7}\label{classlambertian_addbce7ba60f1ff30067ee9de362b12a7} 
+\index{lambertian@{lambertian}!scatter@{scatter}}
+\index{scatter@{scatter}!lambertian@{lambertian}}
+\doxysubsubsection{\texorpdfstring{scatter()}{scatter()}}
+{\footnotesize\ttfamily bool lambertian\+::scatter (\begin{DoxyParamCaption}\item[{const ray \&}]{r\+\_\+in,  }\item[{const \mbox{\hyperlink{classhit__record}{hit\+\_\+record}} \&}]{rec,  }\item[{color \&}]{attenuation,  }\item[{ray \&}]{scattered }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implementação da função de espalhamento para material difuso. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em r\+\_\+in} & Raio incidente. \\
+\hline
+{\em rec} & Registro de interseptação. \\
+\hline
+{\em attenuation} & Atenuação da cor. \\
+\hline
+{\em scattered} & Raio espalhado. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true Sempre retorna verdadeiro. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classmaterial_ada24c67820c20d312f336b3fa0a672d8}{material}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/\+Users/renanoliveira/\+Desktop/ufscar/2023-\/02/computacao-\/grafica/atividades-\/projeto/\+Atividade05/includes/\mbox{\hyperlink{material_8h}{material.\+h}}\end{DoxyCompactItemize}

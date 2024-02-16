@@ -1,0 +1,65 @@
+\doxysection{material Class Reference}
+\hypertarget{classmaterial}{}\label{classmaterial}\index{material@{material}}
+
+
+Classe base abstrata para materiais.  
+
+
+
+
+{\ttfamily \#include $<$material.\+h$>$}
+
+Inheritance diagram for material\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classmaterial}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual bool \mbox{\hyperlink{classmaterial_ada24c67820c20d312f336b3fa0a672d8}{scatter}} (const ray \&r\+\_\+in, const \mbox{\hyperlink{classhit__record}{hit\+\_\+record}} \&rec, color \&attenuation, ray \&scattered) const =0
+\begin{DoxyCompactList}\small\item\em Método virtual puro de espalhamento de raio. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Classe base abstrata para materiais. 
+
+A classe {\ttfamily material} fornece uma interface para diferentes tipos de materiais utilizados em interações de raios com objetos na cena. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classmaterial_ada24c67820c20d312f336b3fa0a672d8}\label{classmaterial_ada24c67820c20d312f336b3fa0a672d8} 
+\index{material@{material}!scatter@{scatter}}
+\index{scatter@{scatter}!material@{material}}
+\doxysubsubsection{\texorpdfstring{scatter()}{scatter()}}
+{\footnotesize\ttfamily virtual bool material\+::scatter (\begin{DoxyParamCaption}\item[{const ray \&}]{r\+\_\+in,  }\item[{const \mbox{\hyperlink{classhit__record}{hit\+\_\+record}} \&}]{rec,  }\item[{color \&}]{attenuation,  }\item[{ray \&}]{scattered }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Método virtual puro de espalhamento de raio. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em r\+\_\+in} & Raio incidente. \\
+\hline
+{\em rec} & Registro de interseptação. \\
+\hline
+{\em attenuation} & Atenuação da cor. \\
+\hline
+{\em scattered} & Raio espalhado. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true Se houve espalhamento do raio. 
+
+false Se não houve espalhamento do raio. 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{classlambertian_addbce7ba60f1ff30067ee9de362b12a7}{lambertian}}, \mbox{\hyperlink{classmetal_a7e934504e51b2c6bad3f073021ea696d}{metal}}, and \mbox{\hyperlink{classdielectric_aefd3b900c7e10ab92ecb127659a83d6e}{dielectric}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/\+Users/renanoliveira/\+Desktop/ufscar/2023-\/02/computacao-\/grafica/atividades-\/projeto/\+Atividade05/includes/\mbox{\hyperlink{material_8h}{material.\+h}}\end{DoxyCompactItemize}

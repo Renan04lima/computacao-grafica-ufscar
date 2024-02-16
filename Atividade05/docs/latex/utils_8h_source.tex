@@ -1,0 +1,46 @@
+\doxysection{utils.\+h}
+\hypertarget{utils_8h_source}{}\label{utils_8h_source}\index{/Users/renanoliveira/Desktop/ufscar/2023-\/02/computacao-\/grafica/atividades-\/projeto/Atividade05/includes/utils.h@{/Users/renanoliveira/Desktop/ufscar/2023-\/02/computacao-\/grafica/atividades-\/projeto/Atividade05/includes/utils.h}}
+\mbox{\hyperlink{utils_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#ifndef\ UTILS\_H}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#define\ UTILS\_H}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ <cmath>}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ <limits>}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ <memory>}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ <random>}}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \textcolor{comment}{//\ Usings}}
+\DoxyCodeLine{00015\ \textcolor{keyword}{using\ }std::shared\_ptr;}
+\DoxyCodeLine{00016\ \textcolor{keyword}{using\ }std::make\_shared;}
+\DoxyCodeLine{00017\ \textcolor{keyword}{using\ }std::sqrt;}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00019\ \textcolor{comment}{//\ Constants}}
+\DoxyCodeLine{00020\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ infinity\ =\ std::numeric\_limits<double>::infinity();}
+\DoxyCodeLine{00021\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ pi\ =\ 3.1415926535897932385;}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00029\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{utils_8h_a457297701063cbffc976655fcac3d5b1}{degrees\_to\_radians}}(\textcolor{keywordtype}{double}\ degrees)\ \{}
+\DoxyCodeLine{00030\ \ \ \ \ \textcolor{keywordflow}{return}\ degrees\ *\ pi\ /\ 180.0;}
+\DoxyCodeLine{00031\ \}}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00038\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{utils_8h_a98b7c682bb6ace85fb747cd2f14db72b}{random\_double}}()\ \{}
+\DoxyCodeLine{00039\ \ \ \ \ \textcolor{keyword}{static}\ std::uniform\_real\_distribution<double>\ distribution(0.0,\ 1.0);}
+\DoxyCodeLine{00040\ \ \ \ \ \textcolor{keyword}{static}\ std::mt19937\ generator;}
+\DoxyCodeLine{00041\ \ \ \ \ \textcolor{keywordflow}{return}\ distribution(generator);}
+\DoxyCodeLine{00042\ \}}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00051\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{utils_8h_a98b7c682bb6ace85fb747cd2f14db72b}{random\_double}}(\textcolor{keywordtype}{double}\ min,\ \textcolor{keywordtype}{double}\ max)\ \{}
+\DoxyCodeLine{00052\ \ \ \ \ \textcolor{keyword}{static}\ std::uniform\_real\_distribution<double>\ distribution(min,\ max);}
+\DoxyCodeLine{00053\ \ \ \ \ \textcolor{keyword}{static}\ std::mt19937\ generator;}
+\DoxyCodeLine{00054\ \ \ \ \ \textcolor{keywordflow}{return}\ distribution(generator);}
+\DoxyCodeLine{00055\ \}}
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00057\ \textcolor{comment}{//\ Common\ headers}}
+\DoxyCodeLine{00058\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{interval_8h}{./interval.h}}"{}}}
+\DoxyCodeLine{00059\ \textcolor{preprocessor}{\#include\ "{}../../Atividade04/includes/ray.h"{}}}
+\DoxyCodeLine{00060\ \textcolor{preprocessor}{\#include\ "{}../../Atividade02/includes/vec3.h"{}}}
+\DoxyCodeLine{00061\ }
+\DoxyCodeLine{00062\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

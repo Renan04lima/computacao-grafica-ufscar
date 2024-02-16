@@ -1,0 +1,91 @@
+\doxysection{/\+Users/renanoliveira/\+Desktop/ufscar/2023-\/02/computacao-\/grafica/atividades-\/projeto/\+Atividade05/includes/utils.h File Reference}
+\hypertarget{utils_8h}{}\label{utils_8h}\index{/Users/renanoliveira/Desktop/ufscar/2023-\/02/computacao-\/grafica/atividades-\/projeto/Atividade05/includes/utils.h@{/Users/renanoliveira/Desktop/ufscar/2023-\/02/computacao-\/grafica/atividades-\/projeto/Atividade05/includes/utils.h}}
+
+
+Arquivo de implementação da classe Utils.  
+
+
+{\ttfamily \#include $<$cmath$>$}\newline
+{\ttfamily \#include $<$limits$>$}\newline
+{\ttfamily \#include $<$memory$>$}\newline
+{\ttfamily \#include $<$random$>$}\newline
+{\ttfamily \#include "{}./interval.\+h"{}}\newline
+{\ttfamily \#include "{}../../\+Atividade04/includes/ray.\+h"{}}\newline
+{\ttfamily \#include "{}../../\+Atividade02/includes/vec3.\+h"{}}\newline
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+double \mbox{\hyperlink{utils_8h_a457297701063cbffc976655fcac3d5b1}{degrees\+\_\+to\+\_\+radians}} (double degrees)
+\begin{DoxyCompactList}\small\item\em Converte graus para radianos. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{utils_8h_a98b7c682bb6ace85fb747cd2f14db72b}{random\+\_\+double}} ()
+\begin{DoxyCompactList}\small\item\em Gera um número aleatório do tipo double no intervalo \mbox{[}0, 1). \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{utils_8h_ae8857dcf75600277c0cbc79a687090ab}{random\+\_\+double}} (double min, double max)
+\begin{DoxyCompactList}\small\item\em Gera um número aleatório do tipo double dentro de um intervalo específico. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{utils_8h_a1bb1e42ae1b40cad6e99da0aab8a5576}\label{utils_8h_a1bb1e42ae1b40cad6e99da0aab8a5576} 
+const double {\bfseries infinity} = std\+::numeric\+\_\+limits$<$double$>$\+::infinity()
+\item 
+\Hypertarget{utils_8h_a43016d873124d39034edb8cd164794db}\label{utils_8h_a43016d873124d39034edb8cd164794db} 
+const double {\bfseries pi} = 3.\+1415926535897932385
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Arquivo de implementação da classe Utils. 
+
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{utils_8h_a457297701063cbffc976655fcac3d5b1}\label{utils_8h_a457297701063cbffc976655fcac3d5b1} 
+\index{utils.h@{utils.h}!degrees\_to\_radians@{degrees\_to\_radians}}
+\index{degrees\_to\_radians@{degrees\_to\_radians}!utils.h@{utils.h}}
+\doxysubsubsection{\texorpdfstring{degrees\_to\_radians()}{degrees\_to\_radians()}}
+{\footnotesize\ttfamily double degrees\+\_\+to\+\_\+radians (\begin{DoxyParamCaption}\item[{double}]{degrees }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Converte graus para radianos. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em degrees} & Graus a serem convertidos. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+double Valor em radianos. 
+\end{DoxyReturn}
+\Hypertarget{utils_8h_a98b7c682bb6ace85fb747cd2f14db72b}\label{utils_8h_a98b7c682bb6ace85fb747cd2f14db72b} 
+\index{utils.h@{utils.h}!random\_double@{random\_double}}
+\index{random\_double@{random\_double}!utils.h@{utils.h}}
+\doxysubsubsection{\texorpdfstring{random\_double()}{random\_double()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily double random\+\_\+double (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Gera um número aleatório do tipo double no intervalo \mbox{[}0, 1). 
+
+\begin{DoxyReturn}{Returns}
+double Número aleatório gerado. 
+\end{DoxyReturn}
+\Hypertarget{utils_8h_ae8857dcf75600277c0cbc79a687090ab}\label{utils_8h_ae8857dcf75600277c0cbc79a687090ab} 
+\index{utils.h@{utils.h}!random\_double@{random\_double}}
+\index{random\_double@{random\_double}!utils.h@{utils.h}}
+\doxysubsubsection{\texorpdfstring{random\_double()}{random\_double()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily double random\+\_\+double (\begin{DoxyParamCaption}\item[{double}]{min,  }\item[{double}]{max }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Gera um número aleatório do tipo double dentro de um intervalo específico. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em min} & Valor mínimo do intervalo. \\
+\hline
+{\em max} & Valor máximo do intervalo. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+double Número aleatório gerado. 
+\end{DoxyReturn}

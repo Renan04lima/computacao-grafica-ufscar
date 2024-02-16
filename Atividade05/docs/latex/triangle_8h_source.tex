@@ -1,0 +1,68 @@
+\doxysection{triangle.\+h}
+\hypertarget{triangle_8h_source}{}\label{triangle_8h_source}\index{/Users/renanoliveira/Desktop/ufscar/2023-\/02/computacao-\/grafica/atividades-\/projeto/Atividade05/includes/triangle.h@{/Users/renanoliveira/Desktop/ufscar/2023-\/02/computacao-\/grafica/atividades-\/projeto/Atividade05/includes/triangle.h}}
+\mbox{\hyperlink{triangle_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#ifndef\ TRIANGLE\_H}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#define\ TRIANGLE\_H}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{hittable_8h}{./hittable.h}}"{}}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{vertex_8h}{./vertex.h}}"{}}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ <tuple>}}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00019\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classtriangle}{triangle}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classhittable}{hittable}}\ \{}
+\DoxyCodeLine{00020\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classvertex}{vertex}}\ \mbox{\hyperlink{classtriangle_a630a9e387667f678007616bbe1e280f2}{A}};\ }
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classvertex}{vertex}}\ \mbox{\hyperlink{classtriangle_aa275ad16451251efae3cfacfd0b3ce2c}{B}};\ }
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classvertex}{vertex}}\ \mbox{\hyperlink{classtriangle_af1521997f602f04b9f5a15e729a673ae}{C}};\ }
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classtriangle_ad2fc21b9b1eff7a424c4dd610784e572}{triangle}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classvertex}{vertex}}\&\ \_A,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classvertex}{vertex}}\&\ \_B,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classvertex}{vertex}}\&\ \_C,\ shared\_ptr<material>\ \_material):\ }
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classtriangle_a630a9e387667f678007616bbe1e280f2}{A}}(\_A),\ \mbox{\hyperlink{classtriangle_aa275ad16451251efae3cfacfd0b3ce2c}{B}}(\_B),\ \mbox{\hyperlink{classtriangle_af1521997f602f04b9f5a15e729a673ae}{C}}(\_C),\ \mbox{\hyperlink{classtriangle_a070d478a241602ac8ba67082b12ec05c}{mat}}(\_material)\{\}}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classtriangle_ae46da887f152b979a456c7c890036757}{hit}}(\textcolor{keyword}{const}\ ray\&\ r,\ \mbox{\hyperlink{classinterval}{interval}}\ ray\_t,\ \mbox{\hyperlink{classhit__record}{hit\_record}}\&\ rec)\ \textcolor{keyword}{const}\ \textcolor{keyword}{noexcept}\ \textcolor{keyword}{override}\ \{}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \ \ \ \ vec3\ e1\ =\ \mbox{\hyperlink{classtriangle_aa275ad16451251efae3cfacfd0b3ce2c}{B}}.coord\ -\/\ \mbox{\hyperlink{classtriangle_a630a9e387667f678007616bbe1e280f2}{A}}.coord;}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \ \ \ \ vec3\ e2\ =\ \mbox{\hyperlink{classtriangle_af1521997f602f04b9f5a15e729a673ae}{C}}.coord\ -\/\ \mbox{\hyperlink{classtriangle_a630a9e387667f678007616bbe1e280f2}{A}}.coord;}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \ \ \ \ vec3\ normal\_e1e2\ =\ cross(e1,\ e2);}
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ nd\ =\ dot(normal\_e1e2,\ r.direction());}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(fabs(nd)\ <\ 1e-\/8)\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ D\ =\ -\/dot(normal\_e1e2,\ \mbox{\hyperlink{classtriangle_a630a9e387667f678007616bbe1e280f2}{A}}.coord);}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ t\ =\ -\/(dot(normal\_e1e2,\ r.origin())\ +\ D)\ /\ nd;}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(t\ <\ 0)\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00057\ }
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(!ray\_t.surrounds(t))\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00059\ }
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ \ \ \ \ point3\ P\ =\ r.at(t);}
+\DoxyCodeLine{00061\ }
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \ \ \ \ vec3\ edge0\ =\ \mbox{\hyperlink{classtriangle_aa275ad16451251efae3cfacfd0b3ce2c}{B}}.coord\ -\/\ \mbox{\hyperlink{classtriangle_a630a9e387667f678007616bbe1e280f2}{A}}.coord;\ }
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \ \ \ \ vec3\ vp0\ =\ P\ -\/\ \mbox{\hyperlink{classtriangle_a630a9e387667f678007616bbe1e280f2}{A}}.coord;}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \ \ \ \ vec3\ vp\ =\ cross(edge0,\ vp0);}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (dot(normal\_e1e2,\ vp)\ <\ 0)\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};\ }
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \ \ \ \ vec3\ edge1\ =\ \mbox{\hyperlink{classtriangle_af1521997f602f04b9f5a15e729a673ae}{C}}.coord\ -\/\ \mbox{\hyperlink{classtriangle_aa275ad16451251efae3cfacfd0b3ce2c}{B}}.coord;\ }
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \ \ \ \ vec3\ vp1\ =\ P\ -\/\ \mbox{\hyperlink{classtriangle_aa275ad16451251efae3cfacfd0b3ce2c}{B}}.coord;}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \ \ \ \ vp\ =\ cross(edge1,\ vp1);}
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (dot(normal\_e1e2,\ vp)\ <\ 0)\ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};\ }
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ \ \ \ \ vec3\ edge2\ =\ \mbox{\hyperlink{classtriangle_a630a9e387667f678007616bbe1e280f2}{A}}.coord\ -\/\ \mbox{\hyperlink{classtriangle_af1521997f602f04b9f5a15e729a673ae}{C}}.coord;\ }
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ \ \ \ \ vec3\ vp2\ =\ P\ -\/\ \mbox{\hyperlink{classtriangle_af1521997f602f04b9f5a15e729a673ae}{C}}.coord;}
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ \ \ \ \ vp\ =\ cross(edge2,\ vp2);}
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (dot(normal\_e1e2,\ vp)\ <\ 0)\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00076\ }
+\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ \ \ \ \ rec.t\ =\ t;}
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ \ \ \ \ rec.p\ =\ P;}
+\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ \ \ \ \ vec3\ color\_normal\ =\ \mbox{\hyperlink{classtriangle_a630a9e387667f678007616bbe1e280f2}{A}}.normal;}
+\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ \ \ \ \ rec.set\_face\_normal(r,\ \mbox{\hyperlink{classtriangle_a630a9e387667f678007616bbe1e280f2}{A}}.normal,\ color\_normal);}
+\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ \ \ \ \ rec.mat\ =\ \mbox{\hyperlink{classtriangle_a070d478a241602ac8ba67082b12ec05c}{mat}};}
+\DoxyCodeLine{00082\ }
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ \};}
+\DoxyCodeLine{00085\ }
+\DoxyCodeLine{00086\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ shared\_ptr<material>\ \mbox{\hyperlink{classtriangle_a070d478a241602ac8ba67082b12ec05c}{mat}};\ }
+\DoxyCodeLine{00088\ \};}
+\DoxyCodeLine{00089\ }
+\DoxyCodeLine{00090\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

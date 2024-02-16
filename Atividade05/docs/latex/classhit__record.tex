@@ -1,0 +1,113 @@
+\doxysection{hit\+\_\+record Class Reference}
+\hypertarget{classhit__record}{}\label{classhit__record}\index{hit\_record@{hit\_record}}
+
+
+Classe que armazena informações sobre uma interseção de raio com um objeto.  
+
+
+
+
+{\ttfamily \#include $<$hittable.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classhit__record_abda3ea71df27b6c13d09411aff577c3d}{set\+\_\+face\+\_\+normal}} (const ray \&r, const vec3 \&outward\+\_\+normal)
+\begin{DoxyCompactList}\small\item\em Define a normal da face com base no raio e na normal externa. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classhit__record_a8e5ecf8dca7621dbd73c2fcb72f0b88a}{set\+\_\+face\+\_\+normal}} (const ray \&r, const vec3 \&outward\+\_\+normal, const vec3 \&color\+\_\+normal)
+\begin{DoxyCompactList}\small\item\em Define a normal da face com base no raio, na normal externa e na cor da normal. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+point3 \mbox{\hyperlink{classhit__record_ab3d1fd7e2890aee96fe01aac7b51f835}{p}}
+\item 
+vec3 \mbox{\hyperlink{classhit__record_a13e119913532f25f57679403759bccfa}{normal}}
+\item 
+shared\+\_\+ptr$<$ \mbox{\hyperlink{classmaterial}{material}} $>$ \mbox{\hyperlink{classhit__record_aead063745ddabd283dc15594c926814c}{mat}}
+\item 
+double \mbox{\hyperlink{classhit__record_a9e8098f3146460e4ed40cb91e74a1e30}{t}}
+\item 
+bool \mbox{\hyperlink{classhit__record_a99c797f34fef8b1f4a0c548a9f9c2433}{front\+\_\+face}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Classe que armazena informações sobre uma interseção de raio com um objeto. 
+
+A classe Hit\+\_\+record contém dados como o ponto de interseção, a normal da superfície, o material associado e o parâmetro t do raio. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classhit__record_abda3ea71df27b6c13d09411aff577c3d}\label{classhit__record_abda3ea71df27b6c13d09411aff577c3d} 
+\index{hit\_record@{hit\_record}!set\_face\_normal@{set\_face\_normal}}
+\index{set\_face\_normal@{set\_face\_normal}!hit\_record@{hit\_record}}
+\doxysubsubsection{\texorpdfstring{set\_face\_normal()}{set\_face\_normal()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void hit\+\_\+record\+::set\+\_\+face\+\_\+normal (\begin{DoxyParamCaption}\item[{const ray \&}]{r,  }\item[{const vec3 \&}]{outward\+\_\+normal }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Define a normal da face com base no raio e na normal externa. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em r} & Raio incidente. \\
+\hline
+{\em outward\+\_\+normal} & Normal externa ao objeto. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classhit__record_a8e5ecf8dca7621dbd73c2fcb72f0b88a}\label{classhit__record_a8e5ecf8dca7621dbd73c2fcb72f0b88a} 
+\index{hit\_record@{hit\_record}!set\_face\_normal@{set\_face\_normal}}
+\index{set\_face\_normal@{set\_face\_normal}!hit\_record@{hit\_record}}
+\doxysubsubsection{\texorpdfstring{set\_face\_normal()}{set\_face\_normal()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void hit\+\_\+record\+::set\+\_\+face\+\_\+normal (\begin{DoxyParamCaption}\item[{const ray \&}]{r,  }\item[{const vec3 \&}]{outward\+\_\+normal,  }\item[{const vec3 \&}]{color\+\_\+normal }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Define a normal da face com base no raio, na normal externa e na cor da normal. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em r} & Raio incidente. \\
+\hline
+{\em outward\+\_\+normal} & Normal externa ao objeto. \\
+\hline
+{\em color\+\_\+normal} & Cor associada à normal. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classhit__record_a99c797f34fef8b1f4a0c548a9f9c2433}\label{classhit__record_a99c797f34fef8b1f4a0c548a9f9c2433} 
+\index{hit\_record@{hit\_record}!front\_face@{front\_face}}
+\index{front\_face@{front\_face}!hit\_record@{hit\_record}}
+\doxysubsubsection{\texorpdfstring{front\_face}{front\_face}}
+{\footnotesize\ttfamily bool hit\+\_\+record\+::front\+\_\+face}
+
+Indica se a interseção ocorreu na face frontal do objeto \Hypertarget{classhit__record_aead063745ddabd283dc15594c926814c}\label{classhit__record_aead063745ddabd283dc15594c926814c} 
+\index{hit\_record@{hit\_record}!mat@{mat}}
+\index{mat@{mat}!hit\_record@{hit\_record}}
+\doxysubsubsection{\texorpdfstring{mat}{mat}}
+{\footnotesize\ttfamily shared\+\_\+ptr$<$\mbox{\hyperlink{classmaterial}{material}}$>$ hit\+\_\+record\+::mat}
+
+Material associado ao objeto \Hypertarget{classhit__record_a13e119913532f25f57679403759bccfa}\label{classhit__record_a13e119913532f25f57679403759bccfa} 
+\index{hit\_record@{hit\_record}!normal@{normal}}
+\index{normal@{normal}!hit\_record@{hit\_record}}
+\doxysubsubsection{\texorpdfstring{normal}{normal}}
+{\footnotesize\ttfamily vec3 hit\+\_\+record\+::normal}
+
+Vetor normal à superfície \Hypertarget{classhit__record_ab3d1fd7e2890aee96fe01aac7b51f835}\label{classhit__record_ab3d1fd7e2890aee96fe01aac7b51f835} 
+\index{hit\_record@{hit\_record}!p@{p}}
+\index{p@{p}!hit\_record@{hit\_record}}
+\doxysubsubsection{\texorpdfstring{p}{p}}
+{\footnotesize\ttfamily point3 hit\+\_\+record\+::p}
+
+Ponto de interseção \Hypertarget{classhit__record_a9e8098f3146460e4ed40cb91e74a1e30}\label{classhit__record_a9e8098f3146460e4ed40cb91e74a1e30} 
+\index{hit\_record@{hit\_record}!t@{t}}
+\index{t@{t}!hit\_record@{hit\_record}}
+\doxysubsubsection{\texorpdfstring{t}{t}}
+{\footnotesize\ttfamily double hit\+\_\+record\+::t}
+
+Parâmetro t do raio na interseção 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/\+Users/renanoliveira/\+Desktop/ufscar/2023-\/02/computacao-\/grafica/atividades-\/projeto/\+Atividade05/includes/\mbox{\hyperlink{hittable_8h}{hittable.\+h}}\end{DoxyCompactItemize}
