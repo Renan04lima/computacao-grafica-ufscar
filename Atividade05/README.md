@@ -1,4 +1,4 @@
-# Atividade 04
+# Atividade 05
 
 **Descrição:**
 
@@ -10,16 +10,17 @@ Além disso, o projeto faz uso de arquivos contendo informações de normais dos
 
 Ao implementar o material difuso e utilizar as informações de normal do modelo, o projeto busca criar uma cena visualmente atraente e realista, demonstrando os princípios fundamentais do ray tracing e oferecendo uma introdução prática à computação gráfica.
 
-
 **Exemplo de Uso:**
 
 - adicionar Lib para salvar em PNG
+
 ```powershell
 $ git clone https://github.com/lvandeve/lodepng.git
 ```
 
 - compilar e executar o código, as imagens serão salvas na pasta `/outputs`
+
 ```bash
-$ g++ -std=c++11 -o output main.cpp  
+$ g++ -std=c++11 -o output main.cpp
 $ ./output
 ```
