@@ -6,6 +6,7 @@
 #ifndef MATERIAL_H
 #define MATERIAL_H
 
+#include "color.h"
 #include "utils.h"
 #include "hittable_list.h"
 #include <cstdlib>
