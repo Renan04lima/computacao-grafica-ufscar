@@ -59,13 +59,30 @@ void ObjLoader::LoadObj(const std::string& filename) {
             std::vector<Face> faces_in_line;
             for (int i = 0; i < 3; ++i) {
                 Face face;
-                int v1, v2, v3;
-                iss >> v1 >> v2 >> v3;
-
-                // Ajuste para considerar apenas os índices de vértices
-                face.v1 = v1;
-                face.v2 = v2;
-                face.v3 = v3;
+                if (line.find("//") != std::string::npos) {
+                    // Format: f 1//1 2//1 3//1
+                    iss >> face.v1;
+                    iss.ignore(); // Ignore '/'
+                    if (iss.peek() == '/') {
+                        face.v2 = 0; // Assign zero to vt1
+                        iss.ignore(); // Ignore '/'
+                        iss >> face.v3;
+                    } else {
+                        face.v2 = 0; // Assign zero to vt1
+                        iss.ignore(); // Ignore '/'
+                        iss >> face.v3;
+                    }
+                } else if (line.find("/") != std::string::npos) {
+                    // Format: f 5/1/1 1/2/1 4/3/1
+                    iss >> face.v1;
+                    iss.ignore(); // Ignore '/'
+                    iss >> face.v2;
+                    iss.ignore(); // Ignore '/'
+                    iss >> face.v3;
+                } else {
+                    // Format: f 1 2 3
+                    iss >> face.v1 >> face.v2 >> face.v3;
+                }
 
                 faces_in_line.push_back(face);
             }
